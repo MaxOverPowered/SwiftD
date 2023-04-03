@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="083d7bed-2e8f-4c18-bbb4-6dac22e0e896" name="Changes" comment="Create a contact us Card be response with validation,create a schem contact Page,and create a section for main page with animation">
+      <change beforePath="$PROJECT_DIR$/../djangoProject/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../djangoProject/.idea/vcs.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2MddLL33pIX9ZhEGgDqmS6vlPfZ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "C:/Users/sos/myProjets/Switft_Dispatch/swiftDispatch/swift_server_java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "ts.external.directory.path": "C:\\Users\\sos\\myProjets\\Switft_Dispatch\\djangoProject\\swift_dispatch_client\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sos\myProjets\Switft_Dispatch\djangoProject\swift_dispatch_client\src\company_Icon\new" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="djangoProject" type="Python.DjangoServer" factoryName="Django server">
+      <module name="swiftDispatch" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="djangoProject.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="083d7bed-2e8f-4c18-bbb4-6dac22e0e896" name="Changes" comment="" />
+      <created>1678101336096</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678101336096</updated>
+      <workItem from="1678101342433" duration="292000" />
+      <workItem from="1678185920138" duration="354000" />
+      <workItem from="1678186329352" duration="37210000" />
+      <workItem from="1678225164825" duration="21316000" />
+      <workItem from="1679045107535" duration="26850000" />
+      <workItem from="1680248589661" duration="6719000" />
+      <workItem from="1680510788304" duration="263000" />
+      <workItem from="1680511070779" duration="279000" />
+      <workItem from="1680511390064" duration="554000" />
+      <workItem from="1680511968071" duration="828000" />
+    </task>
+    <task id="LOCAL-00001" summary="create page response &#10;create endpoint for fetching send email and move frontend to python directory">
+      <created>1678224412120</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678224412120</updated>
+    </task>
+    <task id="LOCAL-00002" summary="create backend and create method for send email to my email and client receive confirmation mail">
+      <created>1678224764726</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678224764726</updated>
+    </task>
+    <task id="LOCAL-00003" summary="create env file">
+      <created>1678225253392</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678225253392</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Create a basic about us page &#10;design for a facebook icon and instagram icon and fix footer">
+      <created>1678241642705</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678241642705</updated>
+    </task>
+    <task id="LOCAL-00005" summary="make navbar response">
+      <created>1678241695996</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1678241695996</updated>
+    </task>
+    <task id="LOCAL-00006" summary="all components is responsive">
+      <created>1678304939104</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678304939104</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add py-10 in classname to about us page">
+      <created>1678304997628</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678304997628</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Create a contact us Card be response with validation,create a schem contact Page,and create a section for main page with animation">
+      <created>1679087588251</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1679087588251</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="127f158b-ea65-4a43-95c9-280d64f3c5c8">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/Users/sos/myProjets/Switft_Dispatch/swiftDispatch" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="127f158b-ea65-4a43-95c9-280d64f3c5c8" value="TOOL_WINDOW" />
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="create page response &#10;create endpoint for fetching send email and move frontend to python directory" />
+    <MESSAGE value="create backend and create method for send email to my email and client receive confirmation mail" />
+    <MESSAGE value="create env file" />
+    <MESSAGE value="Create a basic about us page &#10;design for a facebook icon and instagram icon and fix footer" />
+    <MESSAGE value="make navbar response" />
+    <MESSAGE value="all components is responsive" />
+    <MESSAGE value="add py-10 in classname to about us page" />
+    <MESSAGE value="Create a contact us Card be response with validation,create a schem contact Page,and create a section for main page with animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create a contact us Card be response with validation,create a schem contact Page,and create a section for main page with animation" />
+  </component>
+</project>
