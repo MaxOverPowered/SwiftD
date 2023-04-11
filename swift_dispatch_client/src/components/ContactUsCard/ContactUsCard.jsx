@@ -5,7 +5,7 @@ import {sendEmail} from "../../utils/ApiUtils";
 import {notification} from "antd";
 
 
-const ContactCard = () => {
+const ContactCard = (props) => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [contact, setContact] = useState("");
@@ -36,16 +36,18 @@ const ContactCard = () => {
     };
 
     useEffect(() => {
-        if (name !== "" || email !== "" || contact !== "" || message !== "") {
-            setSubmitDisable(false)
-        } else {
+        if (name === "" || email === "" || contact === "" || message === "" ) {
             setSubmitDisable(true)
-            notification.info(
-                {description: 'Please fill in all the fields so that we can easily get in touch with you'}, 3000
-            )
+        } else {
+            setSubmitDisable(false)
+            // props.onClose();
         }
 
-    })
+    },[name, email, contact, message])
+    const handleClose = () => {
+        props.onClose();
+    };
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -70,7 +72,7 @@ const ContactCard = () => {
                     setEmail("");
                     setContact("");
                     setMessage("");
-                    notification.success({description: 'Thank you for contacting us. We will get back to you shortly.'},5000);
+                    notification.success({description: 'Thank you for contacting us. We will get back to you shortly.'}, 5000);
                 } else {
                     throw new Error('Unable to send email. Please try again later.');
                 }
@@ -89,9 +91,33 @@ const ContactCard = () => {
 
     return (
         <div class="p-8 md:p-10 lg:p-12 bg-white rounded-lg shadow-md">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-green-900 mb-6">
-                Contact Us
-            </h2>
+            <div className="relative h-32 w-full">
+                <div className="absolute left-0 top-0 h-16 w-16">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-green-900 mb-6">
+                        Contact Us
+                    </h2></div>
+                <div className="absolute top-0 right-0 h-16 w-16">
+                    <button
+                        className="absolute top-0 right-0 p-2 focus:outline-none"
+                        onClick={handleClose}
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6 text-gray-500 hover:text-gray-700"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M6 18L18 6M6 6l12 12"
+                            />
+                        </svg>
+                    </button>
+                </div>
+            </div>
             <form class="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={handleSubmit}>
                 <div class="flex flex-col">
                     <input

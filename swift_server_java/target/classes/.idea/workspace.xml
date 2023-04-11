@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="214c3a2f-592c-4a0f-a389-7168f372e53b" name="Changes" comment="Create email service with a send_email method implemented">
-      <change beforePath="$PROJECT_DIR$/../../djangoProject/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../djangoProject/.idea/vcs.xml" beforeDir="false" />
-    </list>
+    <list default="true" id="214c3a2f-592c-4a0f-a389-7168f372e53b" name="Changes" comment="backend" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,15 +52,15 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/sos/myProjets/Switft_Dispatch/swiftDispatch",
+    "last_opened_file_path": "C:/Users/sos/myProjets/Switft_Dispatch/swiftDispatch/swift_server_java",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.keymap",
     "spring.configuration.checksum": "5e213e8b99f98cd1882ae1fcc0347f6c",
     "vue.rearranger.settings.migration": "true"
@@ -76,17 +73,10 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SwiftServerJavaApplication">
-    <configuration name="SwiftServerJavaApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="SwiftServerJavaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="swift_server_java" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.swift_server_java.SwiftServerJavaApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SwiftServerJavaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="swift_server_java" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="src.main.java.com.swift_server_java.SwiftServerJavaApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -103,6 +93,7 @@
       <workItem from="1680249486351" duration="8038000" />
       <workItem from="1680507210371" duration="3853000" />
       <workItem from="1680512812969" duration="687000" />
+      <workItem from="1680514053269" duration="1735000" />
     </task>
     <task id="LOCAL-00001" summary="Change django project with a Spring Boat project">
       <created>1680261601048</created>
@@ -125,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680261663325</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="backend">
+      <created>1680514947729</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680514947729</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,7 +140,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -159,6 +157,7 @@
     <MESSAGE value="Change django project with a Spring Boat project" />
     <MESSAGE value="Create email model class" />
     <MESSAGE value="Create email service with a send_email method implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create email service with a send_email method implemented" />
+    <MESSAGE value="backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="backend" />
   </component>
 </project>

@@ -21,6 +21,7 @@
     "emailjs-com": "^3.2.0",
     "framer-motion": "^10.5.0",
     "lodash.startswith": "^4.2.1",
+    "mdb-react-ui-kit": "^6.0.0",
     "mui-tel-input": "^3.1.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
