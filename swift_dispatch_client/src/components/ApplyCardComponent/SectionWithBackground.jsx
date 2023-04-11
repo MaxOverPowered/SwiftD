@@ -21,7 +21,7 @@ const SectionWithBackground = () => {
                 className="absolute inset-0 opacity-25 bg-cover bg-center"
                 style={{backgroundImage: `url(${truck_element})`}}
             ></div>
-                {!showContactForm ? (
+            {!showContactForm ? (
                 <>
                     <div className="z-10 text-center mt-40 lg:mt-52 xl:mt-60">
                         <motion.h1
@@ -65,7 +65,7 @@ const SectionWithBackground = () => {
                 </>
             ) : (
                 <div className="contact-form-container slide-in opacity-75 bg-black  " onSubmit={handleFormClose}>
-                    <ContactUsCard onClose={handleFormClose}/>
+                    <ContactUsCard/>
                 </div>
             )}
         </section>
