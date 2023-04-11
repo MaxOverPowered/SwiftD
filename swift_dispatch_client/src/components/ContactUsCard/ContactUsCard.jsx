@@ -1,164 +1,171 @@
-import React, {useEffect, useState} from "react";
-import PhoneInput from 'react-phone-input-2'
-import 'react-phone-input-2/lib/style.css'
-import {sendEmail} from "../../utils/ApiUtils";
-import {notification} from "antd";
-
+import React, { useEffect, useState } from "react";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import { sendEmail } from "../../utils/ApiUtils";
+import { notification } from "antd";
 
 const ContactCard = () => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [contact, setContact] = useState("");
-    const [message, setMessage] = useState("");
-    const [charCount, setCharCount] = useState(500);
-    const [submitDisable, setSubmitDisable] = useState(true);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [contact, setContact] = useState("");
+  const [message, setMessage] = useState("");
+  const [charCount, setCharCount] = useState(500);
+  const [submitDisable, setSubmitDisable] = useState(true);
 
-
-    function handleMessageChange(event) {
-        const newInputText = event.target.value;
-        const remainingChars = 500 - newInputText.length;
-        if (remainingChars >= 0) {
-            setCharCount(remainingChars);
-            setMessage(newInputText);
-        }
+  function handleMessageChange(event) {
+    const newInputText = event.target.value;
+    const remainingChars = 500 - newInputText.length;
+    if (remainingChars >= 0) {
+      setCharCount(remainingChars);
+      setMessage(newInputText);
     }
+  }
 
-    const handleNameChange = (event) => {
-        setName(event.target.value);
-    };
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
 
-    const handleEmailChange = (event) => {
-        setEmail(event.target.value);
-    };
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
 
-    const handleContactChange = (value) => {
-        setContact(value);
-    };
+  const handleContactChange = (value) => {
+    setContact(value);
+  };
 
-    useEffect(() => {
-        if (name !== "" || email !== "" || contact !== "" || message !== "") {
-            setSubmitDisable(false)
-        } else {
-            setSubmitDisable(true)
-            notification.info(
-                {description: 'Please fill in all the fields so that we can easily get in touch with you'}, 3000
-            )
-        }
+  useEffect(() => {
+    if (name !== "" || email !== "" || contact !== "" || message !== "") {
+      setSubmitDisable(false);
+    } else {
+      setSubmitDisable(true);
+      notification.info(
+        {
+          description:
+            "Please fill in all the fields so that we can easily get in touch with you",
+        },
+        3000
+      );
+    }
+  });
 
-    })
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    if (!isValidEmail(email)) {
+      notification.error({ description: "Invalid Email" });
+    } else {
+      const templateParams = {
+        from_name: name,
+        message: message,
+        from_contact: contact,
+        from_email: email,
+        reply_to: "swift.dispatch.info@gmail.com",
+        company_name: "Swift Dispatch",
+      };
+      console.log(templateParams);
 
-        if (!isValidEmail(email)) {
-            notification.error({description: 'Invalid Email'}
+      sendEmail(templateParams)
+        .then((response) => {
+          if (response.ok) {
+            setName("");
+            setEmail("");
+            setContact("");
+            setMessage("");
+            notification.success(
+              {
+                description:
+                  "Thank you for contacting us. We will get back to you shortly.",
+              },
+              5000
             );
-        } else {
-            const templateParams = {
-                from_name: name,
-                message: message,
-                from_contact: contact,
-                from_email: email,
-                reply_to: "swift.dispatch.info@gmail.com",
-                company_name: "Swift Dispatch"
-            };
-            console.log(templateParams)
-
-            sendEmail(templateParams).then(response => {
-                if (response.ok) {
-                    setName("");
-                    setEmail("");
-                    setContact("");
-                    setMessage("");
-                    notification.success({description: 'Thank you for contacting us. We will get back to you shortly.'},5000);
-                } else {
-                    throw new Error('Unable to send email. Please try again later.');
-                }
-            })
-                .catch(error => {
-                    notification.error({description: error.message});
-                });
-
-        }
-    };
-
-    const isValidEmail = (email) => {
-        const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return emailRegex.test(String(email).toLowerCase());
+          } else {
+            throw new Error("Unable to send email. Please try again later.");
+          }
+        })
+        .catch((error) => {
+          notification.error({ description: error.message });
+        });
     }
+  };
 
-    return (
-        <div class="p-8 md:p-10 lg:p-12 bg-white rounded-lg shadow-md">
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-green-900 mb-6">
-                Contact Us
-            </h2>
-            <form class="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={handleSubmit}>
-                <div class="flex flex-col">
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        onChange={handleNameChange}
-                        class="border-gray-300 bg-gray-100 w-full px-4 py-2 mb-2"
-                        placeholder="Name"
-                    />
-                </div>
-                <div class="flex flex-col">
-                    <input
-                        id="email"
-                        name="email"
-                        onChange={handleEmailChange}
-                        class="border-gray-300 bg-gray-100 w-full px-4 py-2 mb-2"
-                        placeholder="Email"
-                    />
-                </div>
-                <div class="flex flex-col">
-                    <div class="relative">
-                        <PhoneInput className="border-gray-300  w-full px-10"
-                                    country={'us'}
-                                    value={contact}
-                                    onChange={handleContactChange}
-                                    inputProps={{
-                                        name: 'contact',
-                                        required: true,
-                                        placeholder: 'Enter your phone number',
-                                        className: ' border-gray-300 bg-gray-100  w-full px-11 py-2',
-                                    }}
-                        /></div>
-                </div>
-                <div class="flex flex-col">
-                    <label
-                        for="message"
-                        class="text-green-900 font-medium mb-2"
+  const isValidEmail = (email) => {
+    const emailRegex =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return emailRegex.test(String(email).toLowerCase());
+  };
 
-                    >
-                        Message
-                    </label>
-                    <textarea
-                        className="border-gray-300 bg-gray-100 w-full px-4 py-2 rounded-md h-full"
-                        maxLength={500}
-                        rows={11}
-                        cols={50}
-                        value={message}
-                        onChange={handleMessageChange}
-                        placeholder="Please leave some details about your company here, for example, how many drivers you have, whether you're interested in collaborating with us, or if you'd like to learn about our benefits."
-
-                    />
-                    <p className="text-right text-sm text-gray-500">
-                        {message.length}/500 characters
-                    </p>
-                </div>
-                <div className="flex flex-col md:col-span-2">
-                    <button
-                        disabled={submitDisable}
-                        type="submit"
-                        className="text-white bg-green-500 hover:bg-green-600 px-4 py-2 rounded-md"
-                    >
-                        Send
-                    </button>
-                </div>
-            </form>
+  return (
+    <div class="p-8 md:p-10 lg:p-12 bg-white rounded-lg shadow-md">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-green-900 mb-6">
+        Contact Us
+      </h2>
+      <form
+        class="grid grid-cols-1 md:grid-cols-2 gap-6"
+        onSubmit={handleSubmit}
+      >
+        <div class="flex flex-col">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            onChange={handleNameChange}
+            class="border-gray-300 bg-gray-100 w-full px-4 py-2 mb-2"
+            placeholder="Name"
+          />
         </div>
-    );
-}
+        <div class="flex flex-col">
+          <input
+            id="email"
+            name="email"
+            onChange={handleEmailChange}
+            class="border-gray-300 bg-gray-100 w-full px-4 py-2 mb-2"
+            placeholder="Email"
+          />
+        </div>
+        <div class="flex flex-col">
+          <div class="relative">
+            <PhoneInput
+              className="border-gray-300  w-full px-10"
+              country={"us"}
+              value={contact}
+              onChange={handleContactChange}
+              inputProps={{
+                name: "contact",
+                required: true,
+                placeholder: "Enter your phone number",
+                className: " border-gray-300 bg-gray-100  w-full px-11 py-2",
+              }}
+            />
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <label for="message" class="text-green-900 font-medium mb-2">
+            Message
+          </label>
+          <textarea
+            className="border-gray-300 bg-gray-100 w-full px-4 py-2 rounded-md h-full"
+            maxLength={500}
+            rows={11}
+            cols={50}
+            value={message}
+            onChange={handleMessageChange}
+            placeholder="Please leave some details about your company here, for example, how many drivers you have, whether you're interested in collaborating with us, or if you'd like to learn about our benefits."
+          />
+          <p className="text-right text-sm text-gray-500">
+            {message.length}/500 characters
+          </p>
+        </div>
+        <div className="flex flex-col md:col-span-2">
+          <button
+            disabled={submitDisable}
+            type="submit"
+            className="text-white bg-green-500 hover:bg-green-600 px-4 py-2 rounded-md"
+          >
+            Send
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+};
 export default ContactCard;

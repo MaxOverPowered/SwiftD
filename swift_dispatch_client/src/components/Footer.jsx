@@ -1,63 +1,60 @@
-import React, {useEffect, useState} from "react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faFacebook, faInstagram} from "@fortawesome/free-brands-svg-icons";
-import {FaFacebook, FaInstagram} from "react-icons/fa";
+import React, { useState } from "react";
+import { SocialIcon } from "react-social-icons";
 
 const Footer = () => {
-    const [isHoverFacebook, setHoverFacebook] = useState(false);
-    const [isHoverInstagram, setHoverInstagram] = useState(false);
+  const [isHoverFacebook, setHoverFacebook] = useState(false);
+  const [isHoverInstagram, setHoverInstagram] = useState(false);
+  const [isHoverMail, setHoverMail] = useState(false);
 
-    return (
-        <footer className="bg-gray-900 w-full">
+  return (
+    <footer className="bg-gray-900 w-full">
+      <div className="mt-2 max-w-xl mx-auto py-2 flex flex-col justify-between items-center">
+        <div className="flex justify-center w-full sm:justify-around">
+          <div className="flex space-x-4">
             <div
-                className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center">
-                <div className="text-gray-300 mb-3 sm:mb-0">© Swift Dispatch 2023</div>
-                <div className="flex flex-col sm:flex-row items-center justify-between sm:justify-around w-full">
-                    <a
-                        href="https://www.facebook.com/swift.dispatch.company/"
-                        className="text-gray-300 hover:text-gray-400 px-3 py-2"
-                    >
-                        <div className="relative inline-block align-middle">
-                            <a
-                                href="https://www.facebook.com/swift.dispatch.company/"
-                                className={`inline-flex items-center px-6 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs uppercase tracking-widest text-gray-600 hover:text-white hover:bg-blue-600 focus:outline-none focus:border-blue-300 active:bg-blue-400 transition ease-in-out duration-150 ${
-                                    isHoverFacebook ? "bg-blue-600 text-white" : ""
-                                }`}
-                                onMouseEnter={() => setHoverFacebook(true)}
-                                onMouseLeave={() => setHoverFacebook(false)}
-                            >
-                                <FaFacebook className="text-xl"/>
-                                <span className="ml-2">Facebook</span>
-                            </a>
-                        </div>
-                    </a>
-                    <a
-                        href="https://www.instagram.com/swift.dispatch.company/"
-                        className="text-gray-300 hover:text-gray-400 px-3 py-2"
-                    >
-                        <div className="relative inline-block align-middle">
-                            <a
-                                href="https://www.instagram.com/swift.dispatch.company/"
-                                className={`inline-flex items-center px-6 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs uppercase tracking-widest text-gray-600 hover:text-white hover:bg-purple-600 focus:outline-none focus:border-purple-300 active:bg-purple-400 transition ease-in-out duration-150 ${
-                                    isHoverInstagram ? "bg-purple-600 text-white" : ""
-                                }`}
-                                onMouseEnter={() => setHoverInstagram(true)}
-                                onMouseLeave={() => setHoverInstagram(false)}
-                            >
-                                <FaInstagram className="text-xl"/>
-                                <span className="ml-2">Instagram</span>
-                            </a>
-                        </div>
-                    </a>
-                    <a
-                        className="text-gray-300 hover:text-gray-400 px-3 py-2"
-                    >
-                        swift.dispatch.info@gmail.com
-                    </a>
-                </div>
+              onMouseEnter={() => setHoverFacebook(true)}
+              onMouseLeave={() => setHoverFacebook(false)}
+            >
+              <SocialIcon
+                network="facebook"
+                url="https://www.facebook.com/swift.dispatch.company/"
+                bgColor={isHoverFacebook ? "#4267B2" : "#FFFFFF"}
+                fgColor={isHoverFacebook ? "#FFFFFF" : "#4267B2"}
+                style={{ height: 50, width: 50 }}
+              />
             </div>
-        </footer>
-    );
+            <div
+              onMouseEnter={() => setHoverInstagram(true)}
+              onMouseLeave={() => setHoverInstagram(false)}
+            >
+              <SocialIcon
+                network="instagram"
+                url="https://www.instagram.com/swift.dispatch.company/"
+                bgColor={isHoverInstagram ? "#833AB4" : "#FFFFFF"}
+                fgColor={isHoverInstagram ? "#FFFFFF" : "#833AB4"}
+                style={{ height: 50, width: 50 }}
+              />
+            </div>
+            <div
+              onMouseEnter={() => setHoverMail(true)}
+              onMouseLeave={() => setHoverMail(false)}
+            >
+              <SocialIcon
+                network="mailto"
+                url="mailto:swift.dispatch.info@gmail.com"
+                bgColor={isHoverMail ? "#ff0000" : "#FFFFFF"}
+                fgColor={isHoverMail ? "#FFFFFF" : "#ff0000"}
+                style={{ height: 50, width: 50 }}
+              />
+            </div>
+          </div>
+        </div>
+        <div className="text-white mb-3 font-sans font-semibold mt-3">
+          &copy; Swift Dispatch {new Date().getFullYear()}
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;
