@@ -65,7 +65,7 @@ const SectionWithBackground = () => {
                 </>
             ) : (
                 <div className="contact-form-container slide-in opacity-75 bg-black  " onSubmit={handleFormClose}>
-                    <ContactUsCard/>
+                    <ContactUsCard onClose={handleFormClose}/>
                 </div>
             )}
         </section>
