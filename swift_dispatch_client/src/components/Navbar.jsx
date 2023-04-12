@@ -25,7 +25,7 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 shadow-lg">
-      <nav className="bg-white py-4 flex  justify-between border-8 border-green-900">
+      <nav className="bg-gray-200 py-4 flex justify-between shadow-md hover:shadow-lg transition duration-300">
         <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8">
           <div className="relative flex justify-between h-13">
             <div className="absolute inset-y-0 flex items-left lg:hidden">
@@ -33,7 +33,7 @@ const Navbar = () => {
                 type="button"
                 onClick={toggleNavbar}
                 ref={menuRef}
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
                 aria-controls="mobile-menu"
                 aria-expanded="false"
               >
@@ -67,7 +67,7 @@ const Navbar = () => {
                 )}
               </button>
             </div>
-            <div className=" flex items-center h-12  sm:items-stretch sm:justify-left">
+            <div className="flex items-center h-12 sm:items-stretch sm:justify-left">
               <div className="flex items-center item-left sm:h-15 ml-12 -mt-5 ">
                 <Link to="/">
                   <motion.img
@@ -80,7 +80,7 @@ const Navbar = () => {
                   />
                 </Link>
               </div>
-              <div className="hidden lg:block flex items-center justify-between w-full ">
+              <div className="hidden lg:block items-center justify-between w-full mt-3">
                 <Link
                   to="/about"
                   className="text-green-900 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-l font-medium"
@@ -99,25 +99,11 @@ const Navbar = () => {
                 >
                   Contact Us
                 </Link>
-                <Link to="/signIn">
-                  <button className="ml-8 text-green-900 hover:text-green-900 border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-gray-600 dark:text-green-900 dark:hover:text-white dark:hover:bg-green-900 dark:focus:ring-gray-800">
-                    <span className=" px-3 py-2 transition-all ease-in duration-75  rounded-md group-hover:bg-opacity-0">
-                      Sign in
-                    </span>
-                  </button>
-                </Link>
-                <Link to="/signUp">
-                  <button className=" text-green-900 hover:text-green-900 border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-gray-600 dark:text-green-900 dark:hover:text-white dark:hover:bg-green-900 dark:focus:ring-gray-800">
-                    <span className=" px-3 py-2 transition-all ease-in duration-75  rounded-md group-hover:bg-opacity-0">
-                      Sign Up
-                    </span>
-                  </button>
-                </Link>
               </div>
             </div>
           </div>
           {isOpen && (
-            <div className="flex lg:hidden relative " id="mobile-menu">
+            <div className="flex lg:hidden relative" id="mobile-menu">
               <div className="absolute z-10 px-2 pt-2 pb-3 space-y-1 bg-white border-4 border-green-900 shadow-lg">
                 <Link
                   to="/about"
@@ -137,7 +123,7 @@ const Navbar = () => {
                 >
                   Contact Us
                 </Link>
-                <Link to="/signIn">
+                {/* <Link to="/signIn">
                   <button className=" text-green-900 hover:text-green-900 border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-gray-600 dark:text-green-900 dark:hover:text-white dark:hover:bg-green-900 dark:focus:ring-gray-800">
                     <span className=" px-3 py-2 transition-all ease-in duration-75  rounded-md group-hover:bg-opacity-0">
                       Sign In
@@ -150,7 +136,7 @@ const Navbar = () => {
                       Sign Up
                     </span>
                   </button>
-                </Link>
+                </Link> */}
               </div>
             </div>
           )}
