@@ -4,6 +4,7 @@ import truck_element from "../../company_Icon/new/truck_element.png";
 import text_element from "../../company_Icon/new/text_element.png";
 import { motion } from "framer-motion";
 import PricingSection from "../ApplyCardComponent/PricingSection";
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 
 const ApplyNowSection = () => {
   const [showContactForm, setShowContactForm] = useState(false);
@@ -17,22 +18,27 @@ const ApplyNowSection = () => {
   };
 
   return (
-    <section
-      className="relative flex items-center justify-center pt-16 lg:pt-24"
-      style={{ background: "linear-gradient(to bottom, #FFFFFF, #E5E5E5)" }}
+    <LocomotiveScrollProvider
+      options={{ smooth: true, lerp: 0.05, multiplier: 1.2 }}
+      watch={[]}
     >
-      <div
-        className="absolute inset-0 opacity-25 bg-cover bg-center"
-        style={{ backgroundImage: `url(${truck_element})` }}
-      />
-      {!showContactForm ? (
-        <>
+      <section
+        className="relative pt-16 lg:pt-24"
+        style={{ backgroundColor: "#FFFFFF" }}
+        data-scroll-container
+      >
+        <div
+          className="absolute inset-0 opacity-25 bg-cover bg-center"
+          style={{ backgroundImage: `url(${truck_element})` }}
+        />
+        {!showContactForm ? (
           <div className="z-10 text-center mt-40 lg:mt-52 xl:mt-60">
             <motion.h1
               className="text-green-900 text-4xl sm:text-5xl lg:text-7xl font-bold mb-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
+              data-scroll
             >
               DO YOU NEED DISPATCHING?
             </motion.h1>
@@ -41,6 +47,7 @@ const ApplyNowSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
+              data-scroll
             >
               You have come to the right place!
             </motion.h2>
@@ -49,6 +56,7 @@ const ApplyNowSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.1 }}
+              data-scroll
             >
               We can help you find amazing loads and good routes, fully
               coordinating the carrier’s movement from point A to point B.
@@ -60,6 +68,7 @@ const ApplyNowSection = () => {
               whileHover={{ scale: 1.2 }}
               transition={{ duration: 0.3 }}
               style={{ opacity: 0.8 }}
+              data-scroll
             >
               Contact Us
             </motion.button>
@@ -69,16 +78,16 @@ const ApplyNowSection = () => {
             />
             <PricingSection />
           </div>
-        </>
-      ) : (
-        <div
-          className="contact-form-container slide-in opacity-75 bg-black  "
-          onSubmit={handleFormClose}
-        >
-          <ContactUsCard onClose={handleFormClose} />
-        </div>
-      )}
-    </section>
+        ) : (
+          <div
+            className="contact-form-container slide-in opacity-75 bg-black  "
+            onSubmit={handleFormClose}
+          >
+            <ContactUsCard onClose={handleFormClose} />
+          </div>
+        )}
+      </section>
+    </LocomotiveScrollProvider>
   );
 };
 
