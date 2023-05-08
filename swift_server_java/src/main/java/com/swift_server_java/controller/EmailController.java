@@ -32,12 +32,14 @@ public class EmailController {
             return ResponseEntity.badRequest().body("Invalid email details");
         }
         String email = emailDetails.getClientEmail();
+        if (emailDetails.getClientEmail() == null || emailDetails.getClientContactNumber() == null || emailDetails.getClientMessage() == null || emailDetails.getClientName() == null)
+            return new ResponseEntity<>("All boxes must be filled", HttpStatus.BAD_REQUEST);
         if (emailService.hasSentTooManyEmails(email)) {
             return new ResponseEntity<>("You have sent too many emails. Please wait for our response.", HttpStatus.BAD_REQUEST);
         }
         System.out.println(emailDetails);
         emailService.addEmailInDatabase(emailDetails);
         emailService.sendEmail(emailDetails);
-        return  ResponseEntity.ok("Email sent successfully!");
+        return ResponseEntity.ok().body("{\"status\":\"success\",\"message\":\"Email sent successfully!\"}");
     }
 }
