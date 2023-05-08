@@ -22,7 +22,7 @@ public class EmailService extends BaseService {
 
     public boolean hasSentTooManyEmails(String email) {
         int emailCount = emailRepository.countByEmail(email);
-        return emailCount > 3;
+        return emailCount >= 3;
     }
 
     public void addEmailInDatabase(EmailDetails emailDetails) {
