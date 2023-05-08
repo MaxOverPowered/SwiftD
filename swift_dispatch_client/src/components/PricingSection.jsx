@@ -3,28 +3,30 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Card, CardContent, Typography } from "@material-ui/core";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+// eslint-disable-next-line no-unused-vars
+import truck_element from "../company_Icon/new/truck_element.png";
+
 
 const plans = [
   {
-    name: "Basic Plan",
-    price: "$9.99",
-    features: ["50 loads per month", "24/7 support"],
+    name: "Car hauling dispatch service",
+    price: "from %per Gross",
+    features: ["2+years dispatch", "Keep company healthy","support in 3 languages","Route optimization","Best possible rates on the route","Good Communication with Drivers and Brokers !","appointment at pickup and delivery !"],
     scale: [1, 1.1],
   },
   {
-    name: "Pro Plan",
-    price: "$19.99",
-    features: ["100 loads per month", "24/7 support", "Route optimization"],
+    name: "Billing & Accounting",
+    price: " from %per Gross",
+    features: ["Documentation", "24/7 support", ],
     scale: [1, 1.2],
   },
   {
-    name: "Premium Plan",
-    price: "$29.99",
+    name: "Logbook",
+    price: "from $99.99",
     features: [
-      "Unlimited loads per month",
+      "Ensuring compliance with the HOS regulations is a challenging task for any company, but it's one that we've been successfully managing for years. Even back when drivers were still using paper logs, we were dedicated to ensuring full compliance. With our expert team, you can trust that your drivers will always follow the latest HOS rules and regulations",
       "24/7 support",
       "Route optimization",
-      "Dedicated account manager",
     ],
     scale: [1, 1.1],
   },
@@ -32,8 +34,10 @@ const plans = [
 
 const useStyles = makeStyles({
   card: {
-    width: "300px",
-    height: "400px",
+    backgroundImage: `url(${truck_element})`,
+      backgroundColor: "#333",
+    width: "600px",
+    height: "450px",
     borderRadius: "20px",
     padding: "1.5rem",
     margin: "1.2rem",
@@ -49,25 +53,30 @@ const useStyles = makeStyles({
     fontFamily: "roboto",
     marginBottom: "1rem",
     textAlign: "center",
-    color: "#333",
+    textDecoration:"underline",
+    color: "#1B5E20",
   },
   price: {
-    fontSize: "3rem",
+    fontSize: "1.5rem",
     fontWeight: "bold",
     fontFamily: "roboto",
     marginBottom: "1rem",
     textAlign: "center",
-    color: "#333",
+    color: "#1B5E20",
   },
   feature: {
     fontSize: "1.1rem",
     fontWeight: "semibold",
+    marginLeft: "1.5rem",
     fontFamily: "sans-serif",
     lineHeight: "1.8rem",
-    textAlign: "center",
+    textAlign: "left",
     color: "#666",
     marginBottom: "0.5rem",
-  },
+    listStyleType: "disc",
+    display: "list-item",
+  }
+,
 });
 
 const PricingSection = () => {
