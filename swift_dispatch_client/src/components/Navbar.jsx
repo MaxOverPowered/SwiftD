@@ -104,7 +104,7 @@ const Navbar = () => {
           </div>
           {isOpen && (
             <div className="flex lg:hidden relative" id="mobile-menu">
-              <div className="absolute z-10 px-2 pt-2 pb-3 space-y-1 bg-white border-4 border-green-900 shadow-lg">
+              <div className="absolute z-10 px-2 pt-2 pb-3 space-y-1 bg-white shadow-lg rounded-2xl mt-0.5">
                 <Link
                   to="/about"
                   className="text-green-900 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
