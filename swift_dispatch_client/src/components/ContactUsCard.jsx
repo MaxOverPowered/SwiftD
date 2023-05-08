@@ -36,14 +36,14 @@ const ContactCard = (props) => {
     };
 
     useEffect(() => {
-        if (name === "" || email === "" || contact === "" || message === "" ) {
+        if (name === "" || email === "" || contact === "" || message === "") {
             setSubmitDisable(true)
         } else {
             setSubmitDisable(false)
             // props.onClose();
         }
 
-    },[name, email, contact, message])
+    }, [name, email, contact, message])
     const handleClose = () => {
         props.onClose();
     };
@@ -57,30 +57,17 @@ const ContactCard = (props) => {
             );
         } else {
             const templateParams = {
-                from_name: name,
-                message: message,
-                from_contact: contact,
-                from_email: email,
-                reply_to: "swift.dispatch.info@gmail.com",
-                company_name: "Swift Dispatch"
+                clientName: name,
+                clientMessage: message,
+                clientContactNumber: contact,
+                clientEmail: email
             };
-            console.log(templateParams)
-
             sendEmail(templateParams).then(response => {
-                if (response.ok) {
-                    setName("");
-                    setEmail("");
-                    setContact("");
-                    setMessage("");
-                    notification.success({description: 'Thank you for contacting us. We will get back to you shortly.'}, 5000);
-                } else {
-                    throw new Error('Unable to send email. Please try again later.');
-                }
+                setName("");
+                setEmail("");
+                setContact("");
+                setMessage("");
             })
-                .catch(error => {
-                    notification.error({description: error.message});
-                });
-
         }
     };
 
