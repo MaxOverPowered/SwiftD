@@ -121,7 +121,7 @@ const ContactCard = (props) => {
                         id="email"
                         name="email"
                         onChange={handleEmailChange}
-                        class="border-gray-300 bg-gray-100 w-full px-4 py-2 mb-2"
+                        class="border-gray-300 bg-gray-200 w-full px-4 py-2 mb-2"
                         placeholder="Email"
                     />
                 </div>
@@ -148,7 +148,7 @@ const ContactCard = (props) => {
                         Message
                     </label>
                     <textarea
-                        className="border-gray-300 bg-gray-100 w-full px-4 py-2 rounded-md h-full"
+                        className="border-gray-300 bg-gray-200 w-full px-4 py-2 rounded-md h-full"
                         maxLength={500}
                         rows={11}
                         cols={50}

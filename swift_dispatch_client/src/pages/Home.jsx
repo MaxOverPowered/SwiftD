@@ -21,7 +21,7 @@ const Home = () => {
           data-scroll-section
         >
           <div data-scroll data-scroll-speed="1">
-            <Logbook />
+            {/*<Logbook />*/}
           </div>
         </div>
       </LocomotiveScrollProvider>
