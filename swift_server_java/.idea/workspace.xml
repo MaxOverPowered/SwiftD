@@ -4,23 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="214c3a2f-592c-4a0f-a389-7168f372e53b" name="Changes" comment="backend">
-      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/constants/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/constants/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/EmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/EmailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/swift_server_java/controller/EmailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/swift_server_java/controller/EmailController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/swift_server_java/model/EmailDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/swift_server_java/model/EmailDetails.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/swift_server_java/service/BaseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/swift_server_java/service/BaseService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/swift_server_java/service/EmailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/swift_server_java/service/EmailService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/HELP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/src/main/resources/application.properties" beforeDir="false" />
+    <list default="true" id="214c3a2f-592c-4a0f-a389-7168f372e53b" name="Changes" comment="adapted the return response methods when you send an email and receive correct notification  message">
+      <change afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/company_Icon/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/swift_server_java/service/repository/EmailRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/components/ContactUsCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/components/ContactUsCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/components/PricingSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/components/PricingSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/pages/Home.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680514947729</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="adapted the return response methods when you send an email and receive correct notification  message">
+      <created>1683541215882</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683541215882</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,7 +178,8 @@
     <MESSAGE value="Create email model class" />
     <MESSAGE value="Create email service with a send_email method implemented" />
     <MESSAGE value="backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="backend" />
+    <MESSAGE value="adapted the return response methods when you send an email and receive correct notification  message" />
+    <option name="LAST_COMMIT_MESSAGE" value="adapted the return response methods when you send an email and receive correct notification  message" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

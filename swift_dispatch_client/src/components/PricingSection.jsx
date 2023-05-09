@@ -35,7 +35,7 @@ const plans = [
 const useStyles = makeStyles({
   card: {
     backgroundImage: `url(${truck_element})`,
-      backgroundColor: "#333",
+      backgroundColor: "#FFFFF",
     width: "600px",
     height: "450px",
     borderRadius: "20px",
@@ -50,7 +50,7 @@ const useStyles = makeStyles({
   title: {
     fontSize: "2rem",
     fontWeight: "bold",
-    fontFamily: "roboto",
+    fontFamily: "Roboto, sans-serif",
     marginBottom: "1rem",
     textAlign: "center",
     textDecoration:"underline",
@@ -59,7 +59,7 @@ const useStyles = makeStyles({
   price: {
     fontSize: "1.5rem",
     fontWeight: "bold",
-    fontFamily: "roboto",
+    fontFamily:  "Roboto, sans-serif",
     marginBottom: "1rem",
     textAlign: "center",
     color: "#1B5E20",
@@ -68,7 +68,7 @@ const useStyles = makeStyles({
     fontSize: "1.1rem",
     fontWeight: "semibold",
     marginLeft: "1.5rem",
-    fontFamily: "sans-serif",
+    fontFamily: "Roboto, sans-serif",
     lineHeight: "1.8rem",
     textAlign: "left",
     color: "#666",
