@@ -25,7 +25,6 @@ const plans = [
     price: "from $99.99",
     features: [
       "Ensuring compliance with the HOS regulations is a challenging task for any company, but it's one that we've been successfully managing for years. Even back when drivers were still using paper logs, we were dedicated to ensuring full compliance. With our expert team, you can trust that your drivers will always follow the latest HOS rules and regulations",
-      "24/7 support",
       "Route optimization",
     ],
     scale: [1, 1.1],

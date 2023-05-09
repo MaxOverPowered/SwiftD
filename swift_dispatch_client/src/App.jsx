@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
+import Services from "./pages/Services";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/signUp" element={<Registration />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/services" element={<Services />} />
         </Routes>
       </div>
       <Footer className="py-4" />
