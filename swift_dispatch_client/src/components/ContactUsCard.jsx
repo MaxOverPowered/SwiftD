@@ -13,7 +13,9 @@ const ContactCard = (props) => {
     const [charCount, setCharCount] = useState(500);
     const [submitDisable, setSubmitDisable] = useState(true);
 
-
+    const handleSendClick = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
     function handleMessageChange(event) {
         const newInputText = event.target.value;
         const remainingChars = 500 - newInputText.length;
@@ -112,7 +114,7 @@ const ContactCard = (props) => {
                         id="name"
                         name="name"
                         onChange={handleNameChange}
-                        class="border-gray-300 bg-gray-100 w-full px-4 py-2 mb-2"
+                        class="border-gray-300 bg-gray-200 w-full px-4 py-2 mb-2"
                         placeholder="Name"
                     />
                 </div>
@@ -125,9 +127,9 @@ const ContactCard = (props) => {
                         placeholder="Email"
                     />
                 </div>
-                <div class="flex flex-col">
-                    <div class="relative">
-                        <PhoneInput className="border-gray-300  w-full px-10"
+                <div class="flex flex-col ">
+                    <div class="relative ">
+                        <PhoneInput className="border-gray-300 w-full px-10"
                                     country={'us'}
                                     value={contact}
                                     onChange={handleContactChange}
@@ -162,7 +164,7 @@ const ContactCard = (props) => {
                     </p>
                 </div>
                 <div className="flex flex-col md:col-span-2">
-                    <button
+                    <button onClick={handleSendClick}
                         disabled={submitDisable}
                         type="submit"
                         className="text-white bg-green-500 hover:bg-green-600 px-4 py-2 rounded-md"

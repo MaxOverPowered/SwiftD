@@ -6,6 +6,13 @@ import logo from "../company_Icon/new/text_element.png";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
+  const [isMainPage, setIsMainPage] = useState(window.location.pathname === "/");
+
+  const handleLogoClick = () => {
+    window.location.href = "/";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setIsMainPage(true);
+  };
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
@@ -69,7 +76,7 @@ const Navbar = () => {
             </div>
             <div className="flex items-center h-12 sm:items-stretch sm:justify-left">
               <div className="flex items-center item-left sm:h-15 ml-12 -mt-5 ">
-                <Link to="/">
+                <a href="/" onClick={handleLogoClick}>
                   <motion.img
                     src={logo}
                     alt="swift_Dispatch"
@@ -78,7 +85,7 @@ const Navbar = () => {
                     transition={{ duration: 0.3 }}
                     style={{ maxWidth: "177.49px", maxHeight: "128px" }}
                   />
-                </Link>
+                </a>
               </div>
               <div className="hidden lg:block items-center justify-between w-full mt-3">
                 <Link
