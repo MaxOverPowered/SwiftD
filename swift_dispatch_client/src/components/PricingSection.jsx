@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 // eslint-disable-next-line no-unused-vars
 import truck_element from "../company_Icon/new/truck_element.png";
+import ServiceCard from "../pages/Services";
 
 
 const plans = [
@@ -88,36 +89,37 @@ const PricingSection = () => {
 
   return (
     <section className="flex justify-center">
-      <motion.div
-        className="flex flex-wrap justify-center"
-        initial={{ opacity: 0 }}
-        animate={inView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 1.75 }}
-        ref={ref}
-      >
-        {plans.map((plan, index) => (
-          <motion.div key={index} className="flex">
-            <Card
-              className={classes.card}
-              style={{ boxShadow: "0px 3px 10px rgba(0, 0, 0, 0.1)" }}
-            >
-              <CardContent>
-                <Typography className={classes.title} component="h2">
-                  {plan.name}
-                </Typography>
-                <Typography className={classes.price} component="h3">
-                  {plan.price}
-                </Typography>
-                {plan.features.map((feature, index) => (
-                  <Typography key={index} className={classes.feature}>
-                    {feature}
-                  </Typography>
-                ))}
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
-      </motion.div>
+      {/*<motion.div*/}
+      {/*  className="flex flex-wrap justify-center"*/}
+      {/*  initial={{ opacity: 0 }}*/}
+      {/*  animate={inView ? { opacity: 1 } : { opacity: 0 }}*/}
+      {/*  transition={{ duration: 1.75 }}*/}
+      {/*  ref={ref}*/}
+      {/*>*/}
+      {/*  {plans.map((plan, index) => (*/}
+      {/*    <motion.div key={index} className="flex">*/}
+      {/*      <Card*/}
+      {/*        className={classes.card}*/}
+      {/*        style={{ boxShadow: "0px 3px 10px rgba(0, 0, 0, 0.1)" }}*/}
+      {/*      >*/}
+      {/*        <CardContent>*/}
+      {/*          <Typography className={classes.title} component="h2">*/}
+      {/*            {plan.name}*/}
+      {/*          </Typography>*/}
+      {/*          <Typography className={classes.price} component="h3">*/}
+      {/*            {plan.price}*/}
+      {/*          </Typography>*/}
+      {/*          {plan.features.map((feature, index) => (*/}
+      {/*            <Typography key={index} className={classes.feature}>*/}
+      {/*              {feature}*/}
+      {/*            </Typography>*/}
+      {/*          ))}*/}
+      {/*        </CardContent>*/}
+      {/*      </Card>*/}
+      {/*    </motion.div>*/}
+      {/*  ))}*/}
+      {/*</motion.div>*/}
+      <ServiceCard/>
     </section>
   );
 };
