@@ -79,10 +79,10 @@ const ContactCard = (props) => {
     }
 
     return (
-        <div class="p-8 md:p-10 lg:p-12 bg-white rounded-lg shadow-md">
+        <div className="p-8 md:p-10 lg:p-12 bg-white rounded-lg shadow-md">
             <div className="relative h-32 w-full">
                 <div className="absolute left-0 top-0 h-16 w-16">
-                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-green-900 mb-6">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-green-900 mb-6">
                         Contact Us
                     </h2></div>
                 <div className="absolute top-0 right-0 h-16 w-16">
@@ -107,28 +107,28 @@ const ContactCard = (props) => {
                     </button>
                 </div>
             </div>
-            <form class="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={handleSubmit}>
-                <div class="flex flex-col">
+            <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={handleSubmit}>
+                <div className="flex flex-col">
                     <input
                         type="text"
                         id="name"
                         name="name"
                         onChange={handleNameChange}
-                        class="border-gray-300 bg-gray-200 w-full px-4 py-2 mb-2"
+                        className="border-gray-300 bg-gray-200 w-full px-4 py-2 mb-2"
                         placeholder="Name"
                     />
                 </div>
-                <div class="flex flex-col">
+                <div className="flex flex-col">
                     <input
                         id="email"
                         name="email"
                         onChange={handleEmailChange}
-                        class="border-gray-300 bg-gray-200 w-full px-4 py-2 mb-2"
+                        className="border-gray-300 bg-gray-200 w-full px-4 py-2 mb-2"
                         placeholder="Email"
                     />
                 </div>
-                <div class="flex flex-col ">
-                    <div class="relative ">
+                <div className="flex flex-col ">
+                    <div className="relative ">
                         <PhoneInput className="border-gray-300 w-full px-10"
                                     country={'us'}
                                     value={contact}
@@ -141,10 +141,10 @@ const ContactCard = (props) => {
                                     }}
                         /></div>
                 </div>
-                <div class="flex flex-col">
+                <div className="flex flex-col">
                     <label
-                        for="message"
-                        class="text-green-900 font-medium mb-2"
+                        htmlFor="message"
+                        className="text-green-900 font-medium mb-2"
 
                     >
                         Message
