@@ -3,7 +3,7 @@ import Loading from "./components/Loading";
 import Navbar from "./components/Navbar";
 import {Routes, Route} from "react-router-dom";
 import Registration from "./components/Registration/Registration";
-import ApplyNowSection from "./components/ApplyNowSection"
+import logo from "../src/company_Icon/new/text_element.png";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
@@ -12,25 +12,30 @@ import Services from "./pages/Services";
 
 function App() {
     const [isOnline, setIsOnline] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
+
 
     useEffect(() => {
         const handleOnlineStatus = () => setIsOnline(navigator.onLine);
 
         window.addEventListener('online', handleOnlineStatus);
         window.addEventListener('offline', handleOnlineStatus);
+        const timeoutId = setTimeout(() => {
+            setIsLoading(false);
+        }, 1000);
 
         return () => {
             window.removeEventListener('online', handleOnlineStatus);
             window.removeEventListener('offline', handleOnlineStatus);
+            clearTimeout(timeoutId);
         };
     }, []);
     return (<div>
-            {isOnline ? (<div className="flex flex-col min-h-screen">
+            {isOnline && isLoading === false ? (<div className="flex flex-col min-h-screen">
                     <Navbar className="fixed w-full top-0 z-10"/>
                     <div className="pt-20 flex-grow  lg:w12">
                         <Routes className="sm:px-6 md:px-8 lg:px-10 z-10">
                             <Route path="/" element={<Home/>}/>
-                            {/*<Loading/>*/}
                             <Route path="/signUp" element={<Registration/>}/>
                             <Route path="/about" element={<AboutUs/>}/>
                             <Route path="/contact" element={<ContactUs/>}/>
@@ -40,7 +45,8 @@ function App() {
                     <Footer className="py-4"/>
                 </div>
 
-            ) : (<h1>No internet </h1>
+            ) : (<Loading/>
+
             )}
         </div>
     );
