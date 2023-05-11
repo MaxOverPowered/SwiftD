@@ -8,8 +8,10 @@ const ApplyNowSection = () => {
   const [showContactForm, setShowContactForm] = useState(false);
 
   const handleContactClick = () => {
+    window.scrollTo({ top: 2, behavior: 'smooth' });
     setShowContactForm(true);
   };
+
 
   const handleFormClose = () => {
     setShowContactForm(false);
@@ -76,7 +78,7 @@ const ApplyNowSection = () => {
           className="contact-form-container slide-in opacity-75 bg-black"
           onSubmit={handleFormClose}
         >
-          <ContactUsCard onClose={handleFormClose} />
+          <ContactUsCard onClose={handleFormClose}  />
         </div>
       )}
     </section>
