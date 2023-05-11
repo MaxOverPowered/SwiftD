@@ -15,6 +15,7 @@ const ContactCard = (props) => {
   const handleSendClick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
   function handleMessageChange(event) {
     const newInputText = event.target.value;
     const remainingChars = 500 - newInputText.length;
@@ -41,12 +42,8 @@ const ContactCard = (props) => {
       setSubmitDisable(true);
     } else {
       setSubmitDisable(false);
-      // props.onClose();
     }
   }, [name, email, contact, message]);
-  const handleClose = () => {
-    props.onClose();
-  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -75,6 +72,10 @@ const ContactCard = (props) => {
     return emailRegex.test(String(email).toLowerCase());
   };
 
+  const handleClose = () => {
+    props.onClose();
+  };
+
   return (
     <div className="p-8 md:p-10 lg:p-12 bg-white rounded-lg shadow-md">
       <div className="relative h-32 w-full">
@@ -83,27 +84,29 @@ const ContactCard = (props) => {
             Contact Us
           </h2>
         </div>
-        <div className="absolute top-0 right-0 h-16 w-16">
-          <button
-            className="absolute top-0 right-0 p-2 focus:outline-none"
-            onClick={handleClose}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-gray-500 hover:text-gray-700"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+        {props.showExitButton && (
+          <div className="absolute top-0 right-0 h-16 w-16">
+            <button
+              className="absolute top-0 right-0 p-2 focus:outline-none"
+              onClick={handleClose}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-        </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 text-gray-500 hover:text-gray-700"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+        )}
       </div>
       <form
         className="grid grid-cols-1 md:grid-cols-2 gap-6"
@@ -128,8 +131,8 @@ const ContactCard = (props) => {
             placeholder="Email"
           />
         </div>
-        <div className="flex flex-col ">
-          <div className="relative ">
+        <div className="flex flex-col">
+          <div className="relative">
             <PhoneInput
               className="border-gray-300 w-full px-10"
               country={"us"}
