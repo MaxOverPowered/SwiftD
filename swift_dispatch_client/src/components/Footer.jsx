@@ -15,7 +15,7 @@ const Footer = () => {
               onMouseEnter={() => setHoverFacebook(true)}
               onMouseLeave={() => setHoverFacebook(false)}
             >
-              <SocialIcon
+              <SocialIcon target="_blank"
                 network="facebook"
                 url="https://www.facebook.com/swift.dispatch.company/"
                 bgColor={isHoverFacebook ? "#4267B2" : "#FFFFFF"}
@@ -27,7 +27,7 @@ const Footer = () => {
               onMouseEnter={() => setHoverInstagram(true)}
               onMouseLeave={() => setHoverInstagram(false)}
             >
-              <SocialIcon
+              <SocialIcon target="_blank"
                 network="instagram"
                 url="https://www.instagram.com/swift.dispatch.company/"
                 bgColor={isHoverInstagram ? "#833AB4" : "#FFFFFF"}
@@ -39,7 +39,7 @@ const Footer = () => {
               onMouseEnter={() => setHoverMail(true)}
               onMouseLeave={() => setHoverMail(false)}
             >
-              <SocialIcon
+              <SocialIcon target="_blank"
                 network="mailto"
                 url="mailto:swift.dispatch.info@gmail.com"
                 bgColor={isHoverMail ? "#ff0000" : "#FFFFFF"}
