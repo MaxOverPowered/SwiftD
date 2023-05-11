@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="214c3a2f-592c-4a0f-a389-7168f372e53b" name="Changes" comment="adapted the return response methods when you send an email and receive correct notification  message">
-      <change afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/company_Icon/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/swift_server_java/service/repository/EmailRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/components/ContactUsCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/components/ContactUsCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/components/PricingSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/components/PricingSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/components/Loading.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/components/Loading.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +105,7 @@
       <workItem from="1680514053269" duration="2703000" />
       <workItem from="1681194507917" duration="3838000" />
       <workItem from="1681283080957" duration="6849000" />
+      <workItem from="1683798572315" duration="631000" />
     </task>
     <task id="LOCAL-00001" summary="Change django project with a Spring Boat project">
       <created>1680261601048</created>

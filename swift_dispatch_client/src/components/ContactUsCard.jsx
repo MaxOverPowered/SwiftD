@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { sendEmail } from "../utils/ApiUtils";
-import { notification } from "antd";
+import {toast} from "react-hot-toast";
 
 const ContactCard = (props) => {
   const [name, setName] = useState("");
@@ -52,7 +52,7 @@ const ContactCard = (props) => {
     event.preventDefault();
 
     if (!isValidEmail(email)) {
-      notification.error({ description: "Invalid Email" });
+      toast.error("Invalid Email" );
     } else {
       const templateParams = {
         clientName: name,
