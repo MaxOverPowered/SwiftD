@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import Services from "./pages/Services";
+import {ToasterProvider} from "./components/ToasterProvider";
 
 function App() {
     const [isOnline, setIsOnline] = useState(true);
@@ -34,6 +35,7 @@ function App() {
             {isOnline && isLoading === false ? (<div className="flex flex-col min-h-screen">
                     <Navbar className="fixed w-full top-0 z-10"/>
                     <div className="pt-20 flex-grow  lg:w12">
+                        <ToasterProvider/>
                         <Routes className="sm:px-6 md:px-8 lg:px-10 z-10">
                             <Route path="/" element={<Home/>}/>
                             <Route path="/signUp" element={<Registration/>}/>

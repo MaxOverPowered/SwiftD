@@ -1,5 +1,5 @@
 import {API_BASE_URL} from '../constants/';
-import {notification} from "antd";
+import { toast } from "react-hot-toast";
 
 const request = (options) => {
     const headers = new Headers({
@@ -30,16 +30,16 @@ export function sendEmail(emailRequest) {
         })
             .then((response) => {
                 if (response.ok) {
-                    notification.success({description: 'Thank you for contacting us. We will get back to you shortly.'}, 5000);
+                    toast.success('Thank you for contacting us. We will get back to you shortly.');
                 } else {
                     response.text().then((errorMessage) => {
                         console.log(errorMessage)
-                        notification.error({description: errorMessage}, 3000);
+                        toast.error( errorMessage);
                     });
                 }
             })
             .catch((error) => {
-                notification.error({description: error.message}, 3000);
+                toast.error(error.message);
             });
     });
 }
