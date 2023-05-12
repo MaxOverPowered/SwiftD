@@ -2,20 +2,19 @@ import React, { useState } from "react";
 import ContactUsCard from "./ContactUsCard";
 import truck_element from "../company_Icon/new/truck_element.png";
 import text_element from "../company_Icon/new/text_element.png";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const ApplyNowSection = () => {
   const [showContactForm, setShowContactForm] = useState(false);
 
   const handleContactClick = () => {
-    window.scrollTo({ top: 2, behavior: "smooth" });
     setShowContactForm(true);
     document.body.classList.add("no-scroll"); // Add this line to disable scrolling
   };
 
   const handleFormClose = () => {
-    setShowContactForm(false);
     document.body.classList.remove("no-scroll"); // Add this line to re-enable scrolling
+    setShowContactForm(false);
   };
 
   return (
@@ -71,11 +70,35 @@ const ApplyNowSection = () => {
           </motion.button>
         </div>
       ) : (
-        <div
-          className="contact-form-container slide-in "
-          onSubmit={handleFormClose}
-        >
-          <ContactUsCard onClose={handleFormClose} showExitButton={true} />
+        <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <motion.div
+            className="bg-white p-8 md:p-10 lg:p-12 rounded-lg shadow-md relative"
+            initial={{ opacity: 0, translateY: "100%" }}
+            animate={{ opacity: 1, translateY: "0%" }}
+            exit={{ opacity: 0, translateY: "100%" }}
+            transition={{ duration: 0.3 }}
+          >
+            <button
+              className="absolute top-0 right-0 p-2 focus:outline-none"
+              onClick={handleFormClose}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6 text-gray-500 hover:text-gray-700"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <ContactUsCard onClose={handleFormClose} showExitButton={true} />
+          </motion.div>
         </div>
       )}
     </section>
