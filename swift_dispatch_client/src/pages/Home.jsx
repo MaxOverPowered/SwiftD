@@ -3,7 +3,7 @@ import PricingSection from "../components/PricingSection";
 
 const Home = () => {
   return (
-    <div className="bg-gradient-to-br from-green-500 via-green-800 to-green-500">
+    <div className="">
         <div className="rounded-t-3xl overflow-hidden mb-10">
           <ApplyNowSection />
         </div>

@@ -10,10 +10,12 @@ const ApplyNowSection = () => {
   const handleContactClick = () => {
     window.scrollTo({ top: 2, behavior: "smooth" });
     setShowContactForm(true);
+    document.body.classList.add("no-scroll"); // Add this line to disable scrolling
   };
 
   const handleFormClose = () => {
     setShowContactForm(false);
+    document.body.classList.remove("no-scroll"); // Add this line to re-enable scrolling
   };
 
   return (
@@ -58,23 +60,19 @@ const ApplyNowSection = () => {
             <br /> Let’s get along and make money together!
           </motion.p>
           <motion.button
-            className="bg-white py-3 px-6 rounded-full text-lg font-bold text-gray-900 hover:bg-gray-300 hover:text-gray-900 transition-opacity duration-300 ease-in-out opacity-80"
+            className="bg-white py-3 px-6 rounded-full text-lg font-bold text-gray-900 hover:bg-gray-300 hover:text-gray-900 transition-opacity duration-300 ease-in-out opacity-80 mb-1"
             onClick={handleContactClick}
-            whileHover={{ scale: 1.2 }}
+            whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.3 }}
             style={{ opacity: 0.8 }}
             data-scroll
           >
             Contact Us
           </motion.button>
-          <img
-            src={text_element}
-            className="mx-auto h-40 sm:h-48 lg:h-56 xl:h-64"
-          />
         </div>
       ) : (
         <div
-          className="contact-form-container slide-in opacity-75 bg-black"
+          className="contact-form-container slide-in "
           onSubmit={handleFormClose}
         >
           <ContactUsCard onClose={handleFormClose} showExitButton={true} />

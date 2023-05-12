@@ -6,6 +6,7 @@ import accountingImage from "../company_Icon/new/4.png";
 import logImage from "../company_Icon/new/3.png";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import text_element from "../company_Icon/new/text_element.png";
 
 const services = [
   {
@@ -58,15 +59,15 @@ const ServiceCard = ({ service, onClick }) => {
   };
 
   return (
-    <Card className="flex flex-col justify-between h-full">
+    <Card className="flex flex-col justify-between h-full shadow-lg rounded-lg overflow-hidden">
       <div>
-        <div className="bg-green-800 text-white py-2 px-4 rounded-t-lg">
-          <h3 className="text-lg font-bold h-12 flex items-center justify-between">
+        <div className="bg-green-800 font-sans text-white py-2 px-4 rounded-t-lg">
+          <h3 className="text-lg font-semibold h-12 flex items-center justify-between">
             <span>{service.title}</span>
             <span className="text-sm">{service.price}</span>
           </h3>
         </div>
-        <ul className="text-gray-700 p-4 flex-1">
+        <ul className="text-gray-800 p-4 flex-1 font-sans font-semibold">
           {service.features.map((feature, index) => (
             <li key={index} className="flex items-start mb-2">
               <FaCheck className="mr-2 mt-1 text-green-500 text-xl flex-shrink-0" />
@@ -79,7 +80,7 @@ const ServiceCard = ({ service, onClick }) => {
         <motion.button
           className="bg-white py-3 px-6 rounded-full text-lg font-bold text-gray-900 hover:bg-gray-300 hover:text-gray-900 transition-opacity duration-300 ease-in-out opacity-80"
           onClick={handleContactClick}
-          whileHover={{ scale: 1.2 }}
+          whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.3 }}
         >
           Contact Us
@@ -96,13 +97,22 @@ const ServicePage = () => {
 
   return (
     <div>
-      <h1>Our Services</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="bg-white">
+        <img
+          src={text_element}
+          className="mx-auto h-40 sm:h-48 lg:h-56 xl:h-64"
+        />
+      </div>
+      <h1 className="text-center text-gray-800 text-3xl font-bold mt-4 mb-8 font-sans">
+        Our Services
+      </h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-5 mx-4">
         {services.map((service, index) => (
           <ServiceCard
             key={index}
             service={service}
             onClick={handleContactClick}
+            className="w-full"
           />
         ))}
       </div>
