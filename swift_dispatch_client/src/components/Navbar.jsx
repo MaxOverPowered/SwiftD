@@ -1,12 +1,22 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import logo from "../company_Icon/new/text_element.png";
+import {useTranslation} from "react-i18next";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
   const [isMainPage, setIsMainPage] = useState(window.location.pathname === "/");
+  const { t, i18n } = useTranslation();
+
+  const navOption = [
+    {
+     aboutUs:t('navbar.aboutUs'),
+      contactUs:t('navbar.contactUs'),
+      services:t('navbar.services')
+    }
+  ];
 
   const handleLogoClick = () => {
     window.location.href = "/";
@@ -23,6 +33,11 @@ const Navbar = () => {
     }
   };
 
+  const switchLanguage = () => {
+    const lang = i18n.language === 'en' ? 'ru' : 'en';
+    i18n.changeLanguage(lang);
+  }
+
   useEffect(() => {
     document.addEventListener("click", handleClickOutside);
     return () => {
@@ -33,6 +48,7 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 shadow-lg">
       <nav className="bg-gray-200 py-4 flex justify-between shadow-md hover:shadow-lg transition duration-300">
+        {navOption.map(elementNavbar=>(
         <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8">
           <div className="relative flex justify-between h-13">
             <div className="absolute inset-y-0 flex items-left lg:hidden">
@@ -92,20 +108,23 @@ const Navbar = () => {
                   to="/about"
                   className="text-green-900 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-l font-medium"
                 >
-                  About Us
+                  {elementNavbar.aboutUs}
                 </Link>
                 <Link
                   to="/services"
                   className="text-green-900 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-l font-medium"
                 >
-                  Services
+                  {elementNavbar.services}
                 </Link>
                 <Link
                   to="/contact"
                   className="text-green-900 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-l font-medium"
                 >
-                  Contact Us
+                  {elementNavbar.contactUs}
                 </Link>
+                <button onClick={switchLanguage} className="mt-8 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg">
+                  {i18n.language === 'en' ? 'Switch to Russian' : 'Switch to English'}
+                </button>
               </div>
             </div>
           </div>
@@ -116,19 +135,18 @@ const Navbar = () => {
                   to="/about"
                   className="text-green-900 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  About Us
-                </Link>
+                  {elementNavbar.aboutUs}</Link>
                 <Link
                   to="/services"
                   className="text-green-900 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  Services
+                  {elementNavbar.services}
                 </Link>
                 <Link
                   to="/contact"
                   className="text-green-900 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
-                  Contact Us
+                  {elementNavbar.contactUs}
                 </Link>
                 {/* <Link to="/signIn">
                   <button className=" text-green-900 hover:text-green-900 border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-gray-600 dark:text-green-900 dark:hover:text-white dark:hover:bg-green-900 dark:focus:ring-gray-800">
@@ -148,6 +166,7 @@ const Navbar = () => {
             </div>
           )}
         </div>
+        ))}
       </nav>
     </header>
   );
