@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/api")
@@ -31,6 +32,7 @@ public class EmailController {
         if (bindingResult.hasErrors()) {
             return ResponseEntity.badRequest().body("Invalid email details");
         }
+        emailDetails.setEmailTime(LocalDateTime.now());
         String email = emailDetails.getClientEmail();
         if (emailDetails.getClientEmail() == null || emailDetails.getClientContactNumber() == null || emailDetails.getClientMessage() == null || emailDetails.getClientName() == null)
             return new ResponseEntity<>("All boxes must be filled", HttpStatus.BAD_REQUEST);
