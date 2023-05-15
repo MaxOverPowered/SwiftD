@@ -114,7 +114,7 @@ const Navbar = () => {
                   {t('navbar.contactUs')}
                 </Link>
                 <button onClick={switchLanguage} className="mt-8 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg">
-                  {i18n.language === 'en' ? 'Switch to Russian' : 'Switch to English'}
+                  {i18n.language === 'en' ? 'Ru' : 'En'}
                 </button>
               </div>
             </div>
