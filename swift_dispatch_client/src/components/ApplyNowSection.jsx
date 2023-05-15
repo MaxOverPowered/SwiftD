@@ -52,7 +52,7 @@ const ApplyNowSection = () => {
                                     transition={{delay: 0.3}}
                                     data-scroll
                                 >
-                                    {element.needDispatch}
+                                    {t('applyNowSection.needDispatch')}
                                 </motion.h1>
                                 <motion.h2
                                     className="text-green-900 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-8"

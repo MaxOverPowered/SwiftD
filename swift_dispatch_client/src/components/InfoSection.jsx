@@ -25,14 +25,6 @@ const Benefits = () => {
         }
     ];
 
-    const companyDescription = [
-        {
-            title: t('infoSection.title'),
-            description: t('infoSection.description'),
-            buttonText: t('infoSection.buttonText')
-        }
-    ];
-
     const switchLanguage = () => {
         const lang = i18n.language === 'en' ? 'ru' : 'en';
         i18n.changeLanguage(lang);
@@ -44,12 +36,12 @@ const Benefits = () => {
                 <img src={truckIcon} alt="Truck" className="w-full max-w-sm mx-auto lg:mx-0" />
             </div>
             <div className="lg:w-2/3 lg:pl-16">
-                <h2 className="text-l font-bold text-gray-900 mb-4">{companyDescription.map(element => (
-                    <div key={element.title}>
-                        <h2 className="text-3xl font-bold text-gray-900 mb-2">{element.title}</h2>
-                        <p className="text-gray-700 leading-relaxed mb-6">{element.description}</p>
+                <h2 className="text-l font-bold text-gray-900 mb-4">
+                    <div key={t('infoSection.title')}>
+                        <h2 className="text-3xl font-bold text-gray-900 mb-2">{t('infoSection.title')}</h2>
+                        <p className="text-gray-700 leading-relaxed mb-6">{t('infoSection.description')}</p>
                     </div>
-                ))}</h2>
+                </h2>
                 <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {benefits.map(benefit => (
                         <BenefitCard key={benefit.title} title={benefit.title} description={benefit.description} />
