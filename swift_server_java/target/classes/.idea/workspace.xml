@@ -5,13 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="214c3a2f-592c-4a0f-a389-7168f372e53b" name="Changes" comment="adapted the return response methods when you send an email and receive correct notification  message">
-      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/pages/AboutUs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/pages/AboutUs.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/model/EmailDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/swift_server_java/model/EmailDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/swift_server_java.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/HELP.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/target/classes/application.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +82,7 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "spring.configuration.checksum": "5e213e8b99f98cd1882ae1fcc0347f6c",
     "vue.rearranger.settings.migration": "true"
   },
@@ -87,6 +101,10 @@
   </component>
   <component name="RunManager">
     <configuration name="SwiftServerJavaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <envs>
+        <env name="spring.mail.password" value="ufulzvdqvtszoyes" />
+        <env name="spring.security.oauth2.client.registration.google.client-secret" value="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" />
+      </envs>
       <module name="swift_server_java" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.swift_server_java.SwiftServerJavaApplication" />
       <method v="2">
@@ -109,7 +127,9 @@
       <workItem from="1681194507917" duration="3838000" />
       <workItem from="1681283080957" duration="6849000" />
       <workItem from="1683798572315" duration="3899000" />
-      <workItem from="1684141204483" duration="1424000" />
+      <workItem from="1684141204483" duration="5333000" />
+      <workItem from="1684225808028" duration="1127000" />
+      <workItem from="1684318481404" duration="4613000" />
     </task>
     <task id="LOCAL-00001" summary="Change django project with a Spring Boat project">
       <created>1680261601048</created>
@@ -189,10 +209,14 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/EmailController.java</url>
-          <line>31</line>
+          <line>32</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
