@@ -45,6 +45,9 @@ const resources = {
                 enterYourMessage: 'Enter your message',
                 enterYourEmailAddress: 'Enter your email address',
                 enterYourName: 'Enter your name',
+                enterYourContact:'Enter your phone number',
+                enterMessageInfo:"Please leave some details about your company here, for example, how many drivers you have, whether you're interested in collaborating with us, or if you`d like to learn about our benefits."
+
             }
         },
     },
@@ -88,7 +91,11 @@ const resources = {
                 characterLeft: 'Осталось символов',
                 enterYourMessage: 'Введите ваше сообщение',
                 enterYourEmailAddress: 'Введите ваш адрес электронной почты',
-                enterYourName: 'Введите ваше имя'
+                enterYourName: 'Введите ваше имя',
+                enterYourContact:'Введите свой номер телефона',
+                enterMessageInfo: "Пожалуйста, оставьте здесь некоторые сведения о вашей компании, например, сколько у вас водителей, заинтересованы ли вы в сотрудничестве с нами или хотели бы узнать о наших преимуществах."
+
+
             }
         },
     },
