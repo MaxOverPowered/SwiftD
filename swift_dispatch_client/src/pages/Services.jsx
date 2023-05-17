@@ -98,10 +98,10 @@ const ServicePage = () => {
   return (
     <div>
       <div className="bg-white">
-        <img
+        {/* <img
           src={text_element}
           className="mx-auto h-40 sm:h-48 lg:h-56 xl:h-64"
-        />
+        /> */}
       </div>
       <h1 className="text-center text-gray-800 text-3xl font-bold mt-4 mb-8 font-sans">
         Our Services
