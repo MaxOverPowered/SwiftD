@@ -8,13 +8,13 @@ function Navbar({handleLanguageSwitch, language}) {
     const [isOpen, setIsOpen] = useState(false);
     const menuRef = useRef(null);
     const [isMainPage, setIsMainPage] = useState(window.location.pathname === "/");
+    const {t, i18n} = useTranslation();
 
     const handleLogoClick = () => {
         window.location.href = "/";
         window.scrollTo({top: 0, behavior: "smooth"});
         setIsMainPage(true);
     };
-    const {t, i18n} = useTranslation();
     const toggleNavbar = () => {
         setIsOpen(!isOpen);
     };

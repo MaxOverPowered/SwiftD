@@ -20,7 +20,7 @@ const resources = {
             infoSection: {
                 title: 'Car Hauler Dispatch Service',
                 description: 'Swift Dispatch offers 🚚 Car Hauler Dispatch Services for CDL OTR Drivers in the 🚗 auto transport industry. Are you having a hard time finding the best paying loads? Do you feel like you just don’t have the time or resources to constantly be monitoring load boards? Don’t worry, we have your back! 😎 Our professional team of car hauler dispatchers will keep you loaded. We find the best paying enclosed loads and open carrier loads. 🤝 Our car hauler dispatchers keep you loaded and on the road so that the wheels are rolling and your company is making 💰!',
-            buttonText: 'Switch to Russian',
+                buttonText: 'Switch to Russian',
             },
             navbar: {
                 aboutUs: 'About us',
@@ -34,6 +34,18 @@ const resources = {
                     '            coordinating the carrier’s movement from point A to point B.',
                 text2: ' Let’s get along and make money together!'
             },
+            contactUsCard: {
+                name: 'name',
+                getInTouch: 'Get in Touch',
+                email: 'email',
+                contactNumber: 'Contact Number',
+                message: 'message',
+                submitButton: 'Submit',
+                characterLeft: 'Character left',
+                enterYourMessage: 'Enter your message',
+                enterYourEmailAddress: 'Enter your email address',
+                enterYourName: 'Enter your name',
+            }
         },
     },
     ru: {
@@ -65,51 +77,19 @@ const resources = {
                     ' координируя передвижение перевозчика от точки А до точки Б.',
                 text2: ' Давайте работать вместе и зарабатывать деньги!',
                 contactUs: 'Связаться с нами'
-            },service: {
-                title: 'Услуги',
-                subtitle: 'Мы предлагаем следующие услуги для водителей в сфере автомобильных перевозок:',
-                items: [
-                    {
-                        title: 'Диспетчерские услуги для перевозки автомобилей',
-                        price: ' %',
-                        features: [
-                            'Первая перевозка - бесплатно 😊',
-                            'Более 2 лет опыта диспетчирования 🎧',
-                            'Лучшие возможные цены на маршруте 💰',
-                            'Хорошая коммуникация 📞',
-                            'Поддержание здоровья компании 🌟',
-                            'Назначение времени на погрузку и доставку 📅',
-                        ],
-                        backgroundImage: caHaulerImage,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center center',
-                    },
-                    {
-                        title: 'Биллинг и бухгалтерия',
-                        price: 'от ' + 149 + ' $',
-                        features: [
-                            'Документация',
-                            'Подача необходимых документов брокеру/факторинговой компании для получения оплаты за перевозки.',
-                            'Урегулирование вопросов, которые могут возникнуть из-за задержки получения оплаты.',
-                            'Отслеживание получения оплаты',
-                        ],
-                        backgroundImage: accountingImage,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center center',
-                    },
-                    {
-                        title: 'Электронный журнал',
-                        price: 'от ' + 199 + ' $',
-                        features: [
-                            'Оптимизация маршрута',
-                            'Мы успешно обеспечиваем соблюдение норм времени управления автомобилем на протяжении многих лет, даже до того, как водители начали использовать электронные журналы. Доверьтесь нашей опытной команде, чтобы обеспечить соблюдение ваших водителей последних правил времени управления автомобилем.',
-                        ],
-                        backgroundImage: logImage,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center center',
-                    },
-                ],
             },
+            contactUsCard : {
+                name: 'Имя',
+                getInTouch: 'Свяжитесь с нами',
+                email: 'Электронная почта',
+                contactNumber: 'Контактный номер',
+                message: 'Сообщение',
+                submitButton: 'Отправить',
+                characterLeft: 'Осталось символов',
+                enterYourMessage: 'Введите ваше сообщение',
+                enterYourEmailAddress: 'Введите ваш адрес электронной почты',
+                enterYourName: 'Введите ваше имя'
+            }
         },
     },
 };

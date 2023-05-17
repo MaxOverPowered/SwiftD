@@ -4,6 +4,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import {sendEmail} from "../utils/ApiUtils";
 import {toast} from "react-hot-toast";
+import {useTranslation} from "react-i18next";
 
 const ContactCard = ({showExitButton, onClose}) => {
         const [name, setName] = useState("");
@@ -11,6 +12,7 @@ const ContactCard = ({showExitButton, onClose}) => {
         const [contact, setContact] = useState("");
         const [message, setMessage] = useState("");
         const [submitDisable, setSubmitDisable] = useState(true);
+    const {t, i18n} = useTranslation();
 
         const MAX_MESSAGE_LENGTH = 500;
 
@@ -102,11 +104,11 @@ const ContactCard = ({showExitButton, onClose}) => {
                         </button>
                     </div>
                 )}
-                <h1 className="text-3xl font-bold mb-4">Get in Touch</h1>
+                <h1 className="text-3xl font-bold mb-4"> {t('contactUsCard.getInTouch')}</h1>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
                         <label htmlFor="name" className="block font-medium text-gray-700">
-                            Name
+                            {t('contactUsCard.name')}
                         </label>
                         <input
                             type="text"
@@ -115,13 +117,13 @@ const ContactCard = ({showExitButton, onClose}) => {
                             className="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm"
                             value={name}
                             onChange={handleNameChange}
-                            placeholder="Enter your name"
+                            placeholder={t('contactUsCard.enterYourName')}
                             required
                         />
                     </div>
                     <div className="mb-4">
                         <label htmlFor="email" className="block font-medium text-gray-700">
-                            Email
+                            {t('contactUsCard.email')}
                         </label>
                         <input
                             type="email"
@@ -130,13 +132,13 @@ const ContactCard = ({showExitButton, onClose}) => {
                             className="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm"
                             value={email}
                             onChange={handleEmailChange}
-                            placeholder="Enter your email address"
+                            placeholder={t('contactUsCard.enterYourEmailAddress')}
                             required
                         />
                     </div>
                     <div className="mb-4">
                         <label htmlFor="contact" className="block font-medium text-gray-700">
-                            Contact Number
+                            {t('contactUsCard.contactNumber')}
                         </label>
                         <PhoneInput
                             country={"us"}
@@ -151,7 +153,7 @@ const ContactCard = ({showExitButton, onClose}) => {
                     </div>
                     <div className="mb-4">
                         <label htmlFor="message" className="block font-medium text-gray-700">
-                            Message
+                            {t('contactUsCard.message')}
                         </label>
                         <textarea
                             id="message"
@@ -159,7 +161,7 @@ const ContactCard = ({showExitButton, onClose}) => {
                             className="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm"
                             value={message}
                             onChange={handleMessageChange}
-                            placeholder="Enter your message"
+                            placeholder=  {t('contactUsCard.enterYourMessage')}
                             maxLength={MAX_MESSAGE_LENGTH}
                             required
                         />
@@ -173,7 +175,7 @@ const ContactCard = ({showExitButton, onClose}) => {
                             className={`inline-flex justify-center px-6 py-3 border border-transparent shadow-sm text-base font-medium rounded-md text-white ${submitDisable ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'}`}
                             disabled={submitDisable}
                         >
-                            Submit
+                            {t('contactUsCard.submitButton')}
                         </button>
                     </div>
                 </form>
