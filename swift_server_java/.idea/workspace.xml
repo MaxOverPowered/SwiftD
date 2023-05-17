@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="214c3a2f-592c-4a0f-a389-7168f372e53b" name="Changes" comment="adapted the return response methods when you send an email and receive correct notification  message">
-      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/components/ContactUsCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/components/ContactUsCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/components/Loading.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/components/Loading.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +20,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -31,11 +32,6 @@
         <option name="mavenHome" value="Use Maven wrapper" />
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectId" id="2NlrPKZMoZIE7yUOfcEQTb3W9Km" />
@@ -56,6 +52,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;max&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/sos/myProjets/Switft_Dispatch/swiftDispatch/swift_server_java&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -105,7 +102,9 @@
       <workItem from="1680514053269" duration="2703000" />
       <workItem from="1681194507917" duration="3838000" />
       <workItem from="1681283080957" duration="6849000" />
-      <workItem from="1683798572315" duration="631000" />
+      <workItem from="1683798572315" duration="3899000" />
+      <workItem from="1684141204483" duration="5333000" />
+      <workItem from="1684225808028" duration="1127000" />
     </task>
     <task id="LOCAL-00001" summary="Change django project with a Spring Boat project">
       <created>1680261601048</created>
@@ -184,9 +183,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/swift_server_java/service/EmailService.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/EmailController.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

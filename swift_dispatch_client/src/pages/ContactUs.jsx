@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaFacebook, FaInstagram, FaEnvelope } from "react-icons/fa";
 import ContactUsCard from "../components/ContactUsCard";
+import {useTranslation} from "react-i18next";
 
 const ContactUs = () => {
+  const {t, i18n} = useTranslation();
   return (
     <div className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-lg mx-auto">
-          <h2 className="text-3xl font-bold mb-4 text-center">Contact Us</h2>
+          <h2 className="text-3xl font-bold mb-4 text-center">{t('contactUsCard.getInTouch')}</h2>
           <div className="flex items-center justify-center mb-4">
             <FaEnvelope className="text-gray-600 mr-2" />
             <p className="text-gray-700">swift.dispatch.info@gmail.com</p>
