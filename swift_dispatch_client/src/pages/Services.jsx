@@ -59,15 +59,25 @@ const ServiceCard = ({ service, onClick }) => {
   };
 
   return (
-    <Card className="flex flex-col justify-between h-full shadow-lg rounded-lg overflow-hidden">
-      <div>
-        <div className="bg-green-800 font-sans text-white py-2 px-4 rounded-t-lg">
-          <h3 className="text-lg font-semibold h-12 flex items-center justify-between">
-            <span>{service.title}</span>
-            <span className="text-sm">{service.price}</span>
-          </h3>
+    <Card className="flex flex-col justify-between h-full rounded-lg overflow-hidden shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">
+      <div className="bg-gradient-to-r from-blue-600 to-purple-500 px-4 py-6 rounded-t-lg">
+        <h3 className="text-3xl font-extrabold text-white mb-4">
+          {service.title}
+        </h3>
+        <div className="flex justify-between items-center">
+          <span className="text-xl text-gray-200">{service.price}</span>
+          <motion.button
+            className="bg-gradient-to-r from-pink-500 to-pink-400 py-2 px-4 rounded-full text-lg font-semibold text-white hover:from-pink-600 hover:to-pink-500 transition-all duration-300 transform hover:scale-105"
+            onClick={handleContactClick}
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          >
+            Contact Us
+          </motion.button>
         </div>
-        <ul className="text-gray-800 p-4 flex-1 font-sans font-semibold">
+      </div>
+      <div className="bg-gray-100 p-4 flex-1 font-sans">
+        <ul className="text-gray-800 font-medium">
           {service.features.map((feature, index) => (
             <li key={index} className="flex items-start mb-2">
               <FaCheck className="mr-2 mt-1 text-green-500 text-xl flex-shrink-0" />
@@ -75,16 +85,6 @@ const ServiceCard = ({ service, onClick }) => {
             </li>
           ))}
         </ul>
-      </div>
-      <div className="bg-green-800 py-4 px-4 rounded-b-lg">
-        <motion.button
-          className="bg-white py-3 px-6 rounded-full text-lg font-bold text-gray-900 hover:bg-gray-300 hover:text-gray-900 transition-opacity duration-300 ease-in-out opacity-80"
-          onClick={handleContactClick}
-          whileHover={{ scale: 1.1 }}
-          transition={{ duration: 0.3 }}
-        >
-          Contact Us
-        </motion.button>
       </div>
     </Card>
   );

@@ -117,7 +117,6 @@ const ApplyNowSection = () => {
           </motion.div>
         </div>
       )}
-      ) }
     </section>
   );
 };
