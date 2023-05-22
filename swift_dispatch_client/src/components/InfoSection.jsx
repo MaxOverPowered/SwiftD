@@ -59,12 +59,6 @@ const Benefits = () => {
             />
           ))}
         </ul>
-        <button
-          onClick={switchLanguage}
-          className="mt-8 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg"
-        >
-          {i18n.language === "en" ? "Switch to Russian" : "Switch to English"}
-        </button>
       </div>
     </div>
   );
@@ -72,12 +66,12 @@ const Benefits = () => {
 
 const BenefitCard = ({ title, description }) => {
   return (
-    <li className="relative bg-white rounded-lg p-6 text-center hover:shadow-lg transition duration-300">
+    <li className="bg-white rounded-lg p-6 text-center hover:shadow-lg transition duration-300">
       <h3 className="text-gray-700 font-bold text-lg lg:text-xl mb-2">
         {title}
       </h3>
       <p className="text-gray-700 leading-relaxed">{description}</p>
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-green-500"></div>
+      <div className="absolute bottom-0 left-0 w-full h-1"></div>
     </li>
   );
 };
