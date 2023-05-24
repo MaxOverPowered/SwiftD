@@ -12,9 +12,9 @@ const VideoPlayer = () => {
   }, []);
 
   return (
-    <div className="w-screen h-screen overflow-x-hidden bg-gradient-to-br from-blue-500 to-purple-500">
+    <div className="w-screen h-screen overflow-x-hidden bg-white">
       <div className="relative w-full h-full flex items-center justify-center">
-        <div className="w-full h-4/6 border-4 border-white rounded-lg overflow-hidden">
+        <div className="w-full h-4/6 rounded-lg overflow-hidden">
           <video
             ref={videoRef}
             src={video}
