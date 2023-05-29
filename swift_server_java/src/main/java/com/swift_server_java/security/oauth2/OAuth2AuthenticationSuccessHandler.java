@@ -5,6 +5,7 @@ import com.swift_server_java.config.AppProperties;
 import com.swift_server_java.exception.BadRequestException;
 import com.swift_server_java.security.TokenProvider;
 import com.swift_server_java.util.CookieUtils;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
