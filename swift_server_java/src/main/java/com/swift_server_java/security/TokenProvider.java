@@ -7,12 +7,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
+import java.util.Date;
+
 @Service
 public class TokenProvider {
 
     private static final Logger logger = LoggerFactory.getLogger(TokenProvider.class);
 
-    private AppProperties appProperties;
+    private final AppProperties appProperties;
 
     public TokenProvider(AppProperties appProperties) {
         this.appProperties = appProperties;
@@ -24,17 +30,21 @@ public class TokenProvider {
         Date now = new Date();
         Date expiryDate = new Date(now.getTime() + appProperties.getAuth().getTokenExpirationMsec());
 
+        byte[] apiKeySecretBytes = Base64.getDecoder().decode(appProperties.getAuth().getTokenSecret());
+        SecretKey secretKey = new SecretKeySpec(apiKeySecretBytes, SignatureAlgorithm.HS512.getJcaName());
+
         return Jwts.builder()
                 .setSubject(Long.toString(userPrincipal.getId()))
                 .setIssuedAt(new Date())
                 .setExpiration(expiryDate)
-                .signWith(SignatureAlgorithm.HS512, appProperties.getAuth().getTokenSecret())
+                .signWith(secretKey)
                 .compact();
     }
 
     public Long getUserIdFromToken(String token) {
-        Claims claims = Jwts.parser()
+        Claims claims = Jwts.parserBuilder()
                 .setSigningKey(appProperties.getAuth().getTokenSecret())
+                .build()
                 .parseClaimsJws(token)
                 .getBody();
 
@@ -43,20 +53,14 @@ public class TokenProvider {
 
     public boolean validateToken(String authToken) {
         try {
-            Jwts.parser().setSigningKey(appProperties.getAuth().getTokenSecret()).parseClaimsJws(authToken);
+            Jwts.parserBuilder()
+                    .setSigningKey(appProperties.getAuth().getTokenSecret())
+                    .build()
+                    .parseClaimsJws(authToken);
             return true;
-        } catch (SignatureException ex) {
-            logger.error("Invalid JWT signature");
-        } catch (MalformedJwtException ex) {
-            logger.error("Invalid JWT token");
-        } catch (ExpiredJwtException ex) {
-            logger.error("Expired JWT token");
-        } catch (UnsupportedJwtException ex) {
-            logger.error("Unsupported JWT token");
-        } catch (IllegalArgumentException ex) {
-            logger.error("JWT claims string is empty.");
+        } catch (JwtException ex) {
+            logger.error("Invalid or expired JWT token: {}", ex.getMessage());
         }
         return false;
     }
-
 }
