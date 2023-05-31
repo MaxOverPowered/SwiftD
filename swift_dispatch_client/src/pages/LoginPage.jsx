@@ -1,83 +1,117 @@
-import React, { useState } from 'react';
-import { GoogleLogin } from 'react-google-login';
+import React, { useEffect, useState } from 'react';
+import { Link, Redirect, useNavigate, useLocation } from 'react-router-dom';
+import { GOOGLE_AUTH_URL, ACCESS_TOKEN } from '../constants';
+import { login } from '../utils/ApiUtils';
+import Alert from 'react-s-alert';
+import googleLogo from '../img/google-logo.png';
 
-
-const LoginForm = () => {
+function Login({ authenticated }) {
+    const navigate = useNavigate();
+    const location = useLocation();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleEmailChange = (e) => {
-        setEmail(e.target.value);
+    useEffect(() => {
+        if (location.state && location.state.error) {
+            setTimeout(() => {
+                Alert.error(location.state.error, {
+                    timeout: 5000
+                });
+                navigate(location.pathname, { state: {} });
+            }, 100);
+        }
+    }, [location.state, location.pathname]);
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+
+        if (name === 'email') {
+            setEmail(value);
+        } else if (name === 'password') {
+            setPassword(value);
+        }
     };
 
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value);
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        const loginRequest = {
+            email: email,
+            password: password
+        };
+
+        login(loginRequest)
+            .then(response => {
+                localStorage.setItem(ACCESS_TOKEN, response.accessToken);
+                Alert.success("You're successfully logged in!");
+                navigate('/');
+            })
+            .catch(error => {
+                Alert.error((error && error.message) || 'Oops! Something went wrong. Please try again!');
+            });
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Perform login logic here
-    };
-
-    const handleGoogleAuth = () => {
-        // Handle Google authentication logic here
-    };
+    // if (authenticated) {
+    //     return (
+    //         <Redirect
+    //             to={{
+    //                 pathname: "/",
+    //                 state: { from: location }
+    //             }}
+    //         />
+    //     );
+    // }
 
     return (
-        <div className="p-8 md:p-10 lg:p-12 bg-white rounded-lg shadow-md">
-            <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-green-900 mb-10">
-                Login
-            </h2>
-            <div className="overflow-auto">
-                <form
-                    className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-xl mx-auto"
-                    onSubmit={handleSubmit}
-                >
-                    <div className="flex flex-col">
+        <div className="flex justify-center items-center h-screen">
+            <div className="bg-white shadow-md rounded-lg w-96 p-8">
+                <h1 className="text-2xl font-semibold mb-6 text-gray-800">Login to SpringSocial</h1>
+                <div className="flex flex-col space-y-4 mb-6">
+                    <a className="btn btn-block social-btn google" href={GOOGLE_AUTH_URL}>
+                        <img src={googleLogo} alt="Google" className="h-8 mr-2" /> Log in with Google
+                    </a>
+                </div>
+                <div className="text-center mb-4">
+                    <span className="text-sm text-gray-600">OR</span>
+                </div>
+                <form onSubmit={handleSubmit}>
+                    <div className="mb-4">
                         <input
                             type="email"
-                            id="email"
                             name="email"
-                            value={email}
-                            onChange={handleEmailChange}
-                            className="border-gray-300 bg-gray-200 w-full px-4 py-2 mb-2"
+                            className="w-full px-3 py-2 border border-gray-400 rounded focus:outline-none focus:border-indigo-500"
                             placeholder="Email"
+                            value={email}
+                            onChange={handleInputChange}
                             required
                         />
                     </div>
-                    <div className="flex flex-col">
+                    <div className="mb-6">
                         <input
                             type="password"
-                            id="password"
                             name="password"
-                            value={password}
-                            onChange={handlePasswordChange}
-                            className="border-gray-300 bg-gray-200 w-full px-4 py-2 mb-2"
+                            className="w-full px-3 py-2 border border-gray-400 rounded focus:outline-none focus:border-indigo-500"
                             placeholder="Password"
+                            value={password}
+                            onChange={handleInputChange}
                             required
                         />
                     </div>
-                    <div className="flex flex-col md:col-span-2">
+                    <div className="text-center">
                         <button
                             type="submit"
-                            className="text-white bg-green-500 hover:bg-green-600 px-4 py-2 rounded-md"
+                            className="w-full bg-indigo-500 text-white font-semibold py-2 rounded focus:outline-none hover:bg-indigo-600"
                         >
-                            Log In
+                            Login
                         </button>
-                        <div className="flex flex-col md:col-span-2">
-                            <GoogleLogin
-                                clientId="YOUR_GOOGLE_CLIENT_ID"
-                                buttonText="Sign in with Google"
-                                // onSuccess={handleGoogleResponse}
-                                // onFailure={handleGoogleResponse}
-                                cookiePolicy="single_host_origin"
-                            />
-                        </div>
                     </div>
                 </form>
+                <div className="mt-6 text-center">
+                    <span className="text-sm text-gray-600">New user? <Link to="/signup" className="text-indigo-500">Sign up!</Link></span>
+                </div>
             </div>
         </div>
     );
-};
+}
 
-export default LoginForm;
+export default Login;
