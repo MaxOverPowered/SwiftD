@@ -14,9 +14,18 @@ import {useCookies} from "react-cookie";
 import CookieConsent from "./components/CookieConsent";
 import {useTranslation} from "react-i18next";
 import Welcome from "./pages/Welcome";
-import LoginPage from "./pages/LoginPage";
+import OAuth2RedirectHandler from './components/oauth2/OAuth2RedirectHandler';
+import Alert from "react-s-alert";
+import {getCurrentUser} from "./utils/ApiUtils";
+import {ACCESS_TOKEN} from "./constants";
+import NotFound from "./components/common/NotFound";
+import Login from "./pages/LoginPage";
+import PrivateRoute from "./components/common/PrivateRoute";
+import Profile from "./user/Profile";
 
 function App() {
+    const [authenticated, setAuthenticated] = useState(false);
+    const [currentUser, setCurrentUser] = useState(null);
     const [isOnline, setIsOnline] = useState(true);
     const [isLoading, setIsLoading] = useState(true);
     const [cookies, setCookie] = useCookies(["user", "language"]);
@@ -32,6 +41,26 @@ function App() {
         }
     };
 
+
+    const loadCurrentlyLoggedInUser = () => {
+        getCurrentUser()
+            .then(response => {
+                setCurrentUser(response);
+                setAuthenticated(true);
+                setIsLoading(false);
+            })
+            .catch(error => {
+                setIsLoading(false);
+            });
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem(ACCESS_TOKEN);
+        setAuthenticated(false);
+        setCurrentUser(null);
+        Alert.success("You're safely logged out!");
+    };
+
     useEffect(() => {
         const handleOnlineStatus = () => setIsOnline(navigator.onLine);
         window.addEventListener("online", handleOnlineStatus);
@@ -41,6 +70,7 @@ function App() {
         const timeoutId = setTimeout(() => {
             setIsLoading(false);
         }, 1000);
+        loadCurrentlyLoggedInUser();
 
         return () => {
             window.removeEventListener("online", handleOnlineStatus);
@@ -63,7 +93,27 @@ function App() {
                         <ToasterProvider/>
                         <Routes className="sm:px-6 md:px-8 lg:px-10 z-10">
                             <Route path="/" element={<Home/>}/>
-                            <Route path="/login" element={<LoginPage/>}/>
+                            <Route
+                                path="/profile"
+                                element={
+                                    <PrivateRoute
+                                        authenticated={authenticated}
+                                        currentUser={currentUser}
+                                        component={Profile}
+                                    />
+                                }
+                            />
+                            <Route
+                                path="/login"
+                                element={<Login authenticated={authenticated}/>}
+                            />
+
+                            {/*<Route*/}
+                            {/*    path="/signup"*/}
+                            {/*    render={props => <Signup authenticated={authenticated} {...props} />}*/}
+                            {/*/>*/}
+                            <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}/>
+                            <Route component={NotFound}/>
                             <Route path="/welcome" element={<Welcome/>}/>
                             <Route path="/signUp" element={<Registration/>}/>
                             <Route path="/about" element={<AboutUs/>}/>

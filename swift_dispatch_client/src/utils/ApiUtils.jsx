@@ -1,4 +1,4 @@
-import {API_BASE_URL} from '../constants/';
+import {ACCESS_TOKEN, API_BASE_URL} from '../constants/';
 import { toast } from "react-hot-toast";
 
 const request = (options) => {
@@ -18,7 +18,25 @@ const request = (options) => {
     );
 };
 
+export function getCurrentUser() {
+    if(!localStorage.getItem(ACCESS_TOKEN)) {
+        return Promise.reject("No access token set.");
+    }
 
+    return request({
+        url: API_BASE_URL + "/user/me",
+        method: 'GET'
+    });
+}
+
+
+export function login(loginRequest) {
+    return request({
+        url: API_BASE_URL + "/auth/login",
+        method: 'POST',
+        body: JSON.stringify(loginRequest)
+    });
+}
 export function sendEmail(emailRequest) {
     return new Promise((resolve, reject) => {
         fetch(API_BASE_URL + "/send_email", {

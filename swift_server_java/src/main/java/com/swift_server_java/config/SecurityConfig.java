@@ -58,12 +58,6 @@ public class SecurityConfig {
     public Filter tokenAuthenticationFilter() {
         return new TokenAuthenticationFilter();
     }
-
-    /*
-      By default, Spring OAuth2 uses HttpSessionOAuth2AuthorizationRequestRepository to save
-      the authorization request. But, since our service is stateless, we can't save it in
-      the session. We'll save the request in a Base64 encoded cookie instead.
-    */
     @Bean
     public HttpCookieOAuth2AuthorizationRequestRepository cookieAuthorizationRequestRepository() {
         return new HttpCookieOAuth2AuthorizationRequestRepository();
@@ -80,9 +74,13 @@ public class SecurityConfig {
     }
 
     private AuthenticationManagerBuilder authenticationManagerBuilder() throws Exception {
-        DaoAuthenticationConfigurer<AuthenticationManagerBuilder, CustomUserDetailsService> authenticationConfigurer = new DaoAuthenticationConfigurer<>(customUserDetailsService);
-        return authenticationConfigurer.and();
+        DaoAuthenticationConfigurer<AuthenticationManagerBuilder, CustomUserDetailsService> authenticationConfigurer =
+                new DaoAuthenticationConfigurer<>(customUserDetailsService);
+        return authenticationConfigurer
+                .passwordEncoder(passwordEncoder())
+                .and();
     }
+
 
     private ObjectPostProcessor<Object> objectPostProcessor() {
         return new ObjectPostProcessor<Object>() {
@@ -110,10 +108,10 @@ public class SecurityConfig {
                 .exceptionHandling()
                 .authenticationEntryPoint(new RestAuthenticationEntryPoint())
                 .and()
-                .authorizeRequests(authorize -> authorize
-                        .antMatchers("/", "/error", "/favicon.ico", "/**/*.png", "/**/*.gif", "/**/*.svg", "/**/*.jpg", "/**/*.html", "/**/*.css", "/**/*.js")
+                .authorizeHttpRequests(authorize -> authorize
+                        . requestMatchers("/", "/error", "/favicon.ico", "/**/*.png", "/**/*.gif", "/**/*.svg", "/**/*.jpg", "/**/*.html", "/**/*.css", "/**/*.js")
                         .permitAll()
-                        .antMatchers("/auth/**", "/oauth2/**")
+                        . requestMatchers("/auth/**", "/oauth2/**")
                         .permitAll()
                         .anyRequest()
                         .authenticated()
