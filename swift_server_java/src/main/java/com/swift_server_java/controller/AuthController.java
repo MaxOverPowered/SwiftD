@@ -1,4 +1,5 @@
 package com.swift_server_java.controller;
+
 import com.swift_server_java.exception.BadRequestException;
 import com.swift_server_java.model.User;
 import com.swift_server_java.payload.ApiResponse;
@@ -22,7 +23,7 @@ import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/api/auth")
 public class AuthController {
 
     private final AuthenticationManager authenticationManager;
@@ -55,9 +56,14 @@ public class AuthController {
         return ResponseEntity.ok(new AuthResponse(token));
     }
 
+    @GetMapping
+    public void salut() {
+        System.out.println("saluttttttttttttt");
+    }
+
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) {
-        if(userRepository.existsByEmail(signUpRequest.getEmail())) {
+        if (userRepository.existsByEmail(signUpRequest.getEmail())) {
             throw new BadRequestException("Email address already in use.");
         }
         User user = new User();

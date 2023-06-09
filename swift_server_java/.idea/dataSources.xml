@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:postgresql://localhost:5432/swift</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="swift_dispatch@localhost" uuid="667c526b-5bc4-47d6-a010-7fa4e1b3c7b3">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/swift_dispatch</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

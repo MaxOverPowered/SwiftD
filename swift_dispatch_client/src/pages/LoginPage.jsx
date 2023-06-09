@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Redirect, useNavigate, useLocation } from 'react-router-dom';
+import { Link,Navigate, useNavigate, useLocation } from 'react-router-dom';
 import { GOOGLE_AUTH_URL, ACCESS_TOKEN } from '../constants';
 import { login } from '../utils/ApiUtils';
 import Alert from 'react-s-alert';
@@ -51,16 +51,16 @@ function Login({ authenticated }) {
             });
     };
 
-    // if (authenticated) {
-    //     return (
-    //         <Redirect
-    //             to={{
-    //                 pathname: "/",
-    //                 state: { from: location }
-    //             }}
-    //         />
-    //     );
-    // }
+    if (authenticated) {
+        return (
+            <Navigate
+                to={{
+                    pathname: "/",
+                    state: { from: location }
+                }}
+            />
+        );
+    }
 
     return (
         <div className="flex justify-center items-center h-screen">

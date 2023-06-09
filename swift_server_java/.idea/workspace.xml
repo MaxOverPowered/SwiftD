@@ -4,14 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="214c3a2f-592c-4a0f-a389-7168f372e53b" name="Changes" comment="">
+    <list default="true" id="214c3a2f-592c-4a0f-a389-7168f372e53b" name="Changes" comment="Add needed constant for authentication and google logo">
+      <change afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/components/Registration/Signup.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/components/common/PrivateRoute.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/registerComponentWorker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/components/Registration/Registration.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/utils/ApiUtils.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/utils/ApiUtils.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/d35e3ff2-64c8-463f-aee0-bbaff874cc10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d35e3ff2-64c8-463f-aee0-bbaff874cc10.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/swift_server_java/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/swift_server_java/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/security/TokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/swift_server_java/security/TokenProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/security/oauth2/CustomOAuth2UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/swift_server_java/security/oauth2/CustomOAuth2UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/security/oauth2/OAuth2AuthenticationSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/swift_server_java/security/oauth2/OAuth2AuthenticationSuccessHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/service/repository/EmailRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/swift_server_java/service/repository/EmailRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +39,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/io/jsonwebtoken/jjwt-api/0.11.2/jjwt-api-0.11.2.jar!/io/jsonwebtoken/JwtBuilder.class" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -69,7 +82,7 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Console Colors",
     "spring.configuration.checksum": "5e213e8b99f98cd1882ae1fcc0347f6c",
     "vue.rearranger.settings.migration": "true"
   },
@@ -118,6 +131,9 @@
       <workItem from="1684225808028" duration="1127000" />
       <workItem from="1684318481404" duration="4613000" />
       <workItem from="1684825538024" duration="9081000" />
+      <workItem from="1685441142486" duration="8342000" />
+      <workItem from="1686039868421" duration="6139000" />
+      <workItem from="1686219437916" duration="19572000" />
     </task>
     <task id="LOCAL-00001" summary="Change django project with a Spring Boat project">
       <created>1680261601048</created>
@@ -154,7 +170,70 @@
       <option name="project" value="LOCAL" />
       <updated>1683541215882</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update security config">
+      <created>1685359425331</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1685359425332</updated>
+    </task>
+    <task id="LOCAL-00007" summary="create CustomOAuth2UserService and update token provider">
+      <created>1685359504733</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1685359504733</updated>
+    </task>
+    <task id="LOCAL-00008" summary="create auth controller for login and sign up">
+      <created>1685443406154</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1685443406154</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Create oauth2 redirect handle and not found page">
+      <created>1685529194645</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1685529194645</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Create get current user fetch">
+      <created>1685529233313</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1685529233314</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Create profile page and update login simple page">
+      <created>1685529271023</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1685529271023</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Implement in app authentication and add routes">
+      <created>1685529321746</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1685529321746</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Delete duplicate class and update security config">
+      <created>1685529388719</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1685529388719</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add needed constant for authentication and google logo">
+      <created>1685529986200</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1685529986200</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,7 +269,16 @@
     <MESSAGE value="Create email service with a send_email method implemented" />
     <MESSAGE value="backend" />
     <MESSAGE value="adapted the return response methods when you send an email and receive correct notification  message" />
-    <option name="LAST_COMMIT_MESSAGE" value="adapted the return response methods when you send an email and receive correct notification  message" />
+    <MESSAGE value="update security config" />
+    <MESSAGE value="create CustomOAuth2UserService and update token provider" />
+    <MESSAGE value="create auth controller for login and sign up" />
+    <MESSAGE value="Create oauth2 redirect handle and not found page" />
+    <MESSAGE value="Create get current user fetch" />
+    <MESSAGE value="Create profile page and update login simple page" />
+    <MESSAGE value="Implement in app authentication and add routes" />
+    <MESSAGE value="Delete duplicate class and update security config" />
+    <MESSAGE value="Add needed constant for authentication and google logo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add needed constant for authentication and google logo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -199,6 +287,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/EmailController.java</url>
           <line>32</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/AuthController.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

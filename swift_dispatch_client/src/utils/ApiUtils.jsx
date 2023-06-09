@@ -28,6 +28,14 @@ export function getCurrentUser() {
         method: 'GET'
     });
 }
+export function signup(signupRequest) {
+    return request({
+        url: API_BASE_URL + "/auth/signup",
+        method: 'POST',
+        body: JSON.stringify(signupRequest)
+    });
+}
+
 
 
 export function login(loginRequest) {
