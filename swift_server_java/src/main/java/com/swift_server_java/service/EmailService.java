@@ -1,24 +1,29 @@
 package com.swift_server_java.service;
 
 import com.swift_server_java.model.EmailDetails;
-import com.swift_server_java.service.repository.EmailRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.swift_server_java.repository.EmailRepository;
+import com.swift_server_java.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 public class EmailService extends BaseService {
 
-    @Autowired
-    private JavaMailSender emailSender;
+    private final JavaMailSender emailSender;
+
     @Value("${spring.mail.username}")
     private String companyEmail;
 
-    public EmailService(EmailRepository emailRepository) {
-        super(emailRepository);
+    public EmailService(UserRepository userRepository,
+                        EmailRepository emailRepository, JavaMailSender emailSender) {
+        super(userRepository, emailRepository);
+        this.emailSender = emailSender;
     }
+
 
     public boolean hasSentTooManyEmails(String email) {
         int emailCount = emailRepository.countByEmail(email);
