@@ -1,21 +1,24 @@
 package com.swift_server_java.controller;
 
-import com.swift_server_java.exception.BadRequestException;
 import com.swift_server_java.model.User;
 import com.swift_server_java.payload.ApiResponse;
-import com.swift_server_java.model.types.AuthProvider;
 import com.swift_server_java.payload.AuthResponse;
 import com.swift_server_java.payload.LoginRequest;
 import com.swift_server_java.payload.SignUpRequest;
-import com.swift_server_java.repository.UserRepository;
 import com.swift_server_java.security.TokenProvider;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.swift_server_java.service.EmailService;
+import com.swift_server_java.service.UserService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -24,24 +27,25 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/api/auth")
-public class AuthController {
+public class AuthController extends BaseController {
+
+    private final Logger logger = LoggerFactory.getLogger(AuthController.class);
 
     private final AuthenticationManager authenticationManager;
-    private final UserRepository userRepository;
-    private final PasswordEncoder passwordEncoder;
     private final TokenProvider tokenProvider;
-
-    @Autowired
-    public AuthController(AuthenticationManager authenticationManager, UserRepository userRepository,
-                          PasswordEncoder passwordEncoder, TokenProvider tokenProvider) {
+    public AuthController(EmailService emailService,
+                          UserService userService,
+                          AuthenticationManager authenticationManager,
+                          TokenProvider tokenProvider) {
+        super(emailService, userService);
         this.authenticationManager = authenticationManager;
-        this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
         this.tokenProvider = tokenProvider;
     }
 
+
     @PostMapping("/login")
-    public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
+    public ResponseEntity<AuthResponse> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
+        logger.info("authenticateUser with parameter: loginRequest = {}", loginRequest);
 
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
@@ -56,32 +60,34 @@ public class AuthController {
         return ResponseEntity.ok(new AuthResponse(token));
     }
 
-    @GetMapping
-    public void salut() {
-        System.out.println("saluttttttttttttt");
+    @PostMapping("/signup")
+    public ResponseEntity<ApiResponse> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) {
+        logger.info("registerUser with parameter: signUpRequest = {}", signUpRequest);
+
+        User user = userService.registerUser(signUpRequest);
+
+        URI uri = ServletUriComponentsBuilder
+                .fromCurrentContextPath().path("/user/me")
+                .buildAndExpand(user.getId()).toUri();
+
+        return statusCreated("User", uri);
     }
 
-    @PostMapping("/signup")
-    public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) {
-        if (userRepository.existsByEmail(signUpRequest.getEmail())) {
-            throw new BadRequestException("Email address already in use.");
+    @GetMapping("/logout")
+    public ResponseEntity<String> logout(HttpServletRequest request, HttpServletResponse response) {
+        logger.info("logout without parameters");
+
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null) {
+            new SecurityContextLogoutHandler().logout(request, response, auth);
         }
-        User user = new User();
-        user.setName(signUpRequest.getName());
-        user.setEmail(signUpRequest.getEmail());
-        user.setPassword(signUpRequest.getPassword());
-        user.setProvider(AuthProvider.LOCAL);
 
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.invalidate();
+        }
 
-        User result = userRepository.save(user);
-
-        URI location = ServletUriComponentsBuilder
-                .fromCurrentContextPath().path("/user/me")
-                .buildAndExpand(result.getId()).toUri();
-
-        return ResponseEntity.created(location)
-                .body(new ApiResponse(true, "User registered successfully"));
+        return statusOk("User logout success");
     }
 
 }
