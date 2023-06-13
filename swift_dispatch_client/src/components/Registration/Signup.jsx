@@ -3,7 +3,7 @@ import { Link, Navigate } from 'react-router-dom';
 import { GOOGLE_AUTH_URL } from '../../constants';
 import { signup } from '../../utils/ApiUtils';
 import googleLogo from '../../img/google-logo.png';
-import Alert from 'react-s-alert';
+import { toast } from "react-hot-toast";
 
 const Signup = (props) => {
     const [authenticated, setAuthenticated] = useState(false);
@@ -47,7 +47,8 @@ const SignupForm = (props) => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        password: ''
+        password: '',
+        provider: ''
     });
 
     const handleInputChange = (event) => {
@@ -67,12 +68,12 @@ const SignupForm = (props) => {
 
         signup(signUpRequest)
             .then(response => {
-                Alert.success("You're successfully registered. Please login to continue!");
+                toast.success("You're successfully registered. Please login to continue!");
                 props.setAuthenticated(true);
                 props.history.push("/login");
             })
             .catch(error => {
-                Alert.error((error && error.message) || 'Oops! Something went wrong. Please try again!');
+                toast.error((error && error.message) || 'Oops! Something went wrong. Please try again!');
             });
     };
 
@@ -112,7 +113,7 @@ const SignupForm = (props) => {
                 />
             </div>
             <div className="form-item">
-                <button type="submit" className="btn btn-block btn-primary">Sign Up</button>
+                <button type="submit" onSubmit={handleSubmit} className="btn btn-block btn-primary">Sign Up</button>
             </div>
         </form>
     );

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import logo from "../company_Icon/new/text_element.png";
 import { useTranslation } from "react-i18next";
+import {getLogout} from "../utils/ApiUtils";
 
 function Navbar({ handleLanguageSwitch, language }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,6 +37,9 @@ function Navbar({ handleLanguageSwitch, language }) {
       const newLanguage = i18n.language === "en" ? "ru" : "en";
       i18n.changeLanguage(newLanguage);
     }
+  };
+  const handleLogout = () => {
+   getLogout();
   };
 
   useEffect(() => {
@@ -130,6 +134,12 @@ function Navbar({ handleLanguageSwitch, language }) {
                   className="px-3 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg"
                 >
                   {language === "en" ? "Ru" : "En"}
+                </button>
+                <button
+                    onClick={handleLogout}
+                    className="px-3 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg"
+                >
+                  logout
                 </button>
               </div>
             </div>

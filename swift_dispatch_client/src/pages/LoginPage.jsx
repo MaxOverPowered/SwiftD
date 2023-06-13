@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { Link,Navigate, useNavigate, useLocation } from 'react-router-dom';
-import { GOOGLE_AUTH_URL, ACCESS_TOKEN } from '../constants';
-import { login } from '../utils/ApiUtils';
-import Alert from 'react-s-alert';
+import React, {useEffect, useState} from 'react';
+import {Link, Navigate, useNavigate, useLocation} from 'react-router-dom';
+import {GOOGLE_AUTH_URL, ACCESS_TOKEN} from '../constants';
+import {getCurrentUser, getUserId, login} from '../utils/ApiUtils';
 import googleLogo from '../img/google-logo.png';
+import {toast} from "react-hot-toast";
 
-function Login({ authenticated }) {
+
+function Login({authenticated}) {
     const navigate = useNavigate();
     const location = useLocation();
     const [email, setEmail] = useState('');
@@ -14,16 +15,16 @@ function Login({ authenticated }) {
     useEffect(() => {
         if (location.state && location.state.error) {
             setTimeout(() => {
-                Alert.error(location.state.error, {
+                toast.error(location.state.error, {
                     timeout: 5000
                 });
-                navigate(location.pathname, { state: {} });
+                navigate(location.pathname, {state: {}});
             }, 100);
         }
     }, [location.state, location.pathname]);
 
     const handleInputChange = (event) => {
-        const { name, value } = event.target;
+        const {name, value} = event.target;
 
         if (name === 'email') {
             setEmail(value);
@@ -32,22 +33,35 @@ function Login({ authenticated }) {
         }
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
+        console.log(event)
+        console.log({email, password})
 
-        const loginRequest = {
-            email: email,
-            password: password
-        };
+        login({email, password})
+            .then((response) => {
+                console.log("-----------------")
 
-        login(loginRequest)
-            .then(response => {
-                localStorage.setItem(ACCESS_TOKEN, response.accessToken);
-                Alert.success("You're successfully logged in!");
-                navigate('/');
+                console.log(response.accessToken)
+                console.log("-----------------")
+                sessionStorage.setItem(ACCESS_TOKEN, response.accessToken);
+                getUserId(email).then((data) =>
+                    sessionStorage.setItem("userId", data.id)
+                );
+                getCurrentUser();
+                if (sessionStorage.getItem("from")) {
+                    navigate(sessionStorage.getItem("from"));
+                    sessionStorage.removeItem("from");
+                } else {
+                    navigate("/");
+                }
             })
-            .catch(error => {
-                Alert.error((error && error.message) || 'Oops! Something went wrong. Please try again!');
+            .catch((error) => {
+                if (error.status === 401) {
+                    toast.error("Your Username or Password is incorrect. Please try again!");
+                } else {
+                    toast.error(error.message || "Sorry! Something went wrong. Please try again!");
+                }
             });
     };
 
@@ -56,7 +70,7 @@ function Login({ authenticated }) {
             <Navigate
                 to={{
                     pathname: "/",
-                    state: { from: location }
+                    state: {from: location}
                 }}
             />
         );
@@ -68,7 +82,7 @@ function Login({ authenticated }) {
                 <h1 className="text-2xl font-semibold mb-6 text-gray-800">Login to SpringSocial</h1>
                 <div className="flex flex-col space-y-4 mb-6">
                     <a className="btn btn-block social-btn google" href={GOOGLE_AUTH_URL}>
-                        <img src={googleLogo} alt="Google" className="h-8 mr-2" /> Log in with Google
+                        <img src={googleLogo} alt="Google" className="h-8 mr-2"/> Log in with Google
                     </a>
                 </div>
                 <div className="text-center mb-4">

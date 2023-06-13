@@ -15,7 +15,7 @@ import CookieConsent from "./components/CookieConsent";
 import { useTranslation } from "react-i18next";
 import Welcome from "./pages/Welcome";
 import OAuth2RedirectHandler from './components/oauth2/OAuth2RedirectHandler';
-import Alert from "react-s-alert";
+import { toast } from "react-hot-toast";
 import { getCurrentUser } from "./utils/ApiUtils";
 import { ACCESS_TOKEN } from "./constants";
 import Login from "./pages/LoginPage";
@@ -57,7 +57,7 @@ function App() {
         localStorage.removeItem(ACCESS_TOKEN);
         setAuthenticated(false);
         setCurrentUser(null);
-        Alert.success("You're safely logged out!");
+        toast.success("You're safely logged out!");
     };
 
     useEffect(() => {
