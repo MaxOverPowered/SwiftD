@@ -4,24 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="214c3a2f-592c-4a0f-a389-7168f372e53b" name="Changes" comment="Add needed constant for authentication and google logo">
-      <change afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/components/Registration/Signup.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/components/common/PrivateRoute.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/registerComponentWorker.js" afterDir="false" />
+    <list default="true" id="214c3a2f-592c-4a0f-a389-7168f372e53b" name="Changes" comment="Create logout button for test &#10;fix sign up form and sing in &#10;add endpoint for backend">
       <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/components/Registration/Registration.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/components/ContactUsCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/components/ContactUsCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/components/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/components/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/constants/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/constants/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/utils/ApiUtils.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/utils/ApiUtils.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d35e3ff2-64c8-463f-aee0-bbaff874cc10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d35e3ff2-64c8-463f-aee0-bbaff874cc10.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/swift_server_java/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/service/repository/EmailRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/swift_server_java/service/repository/EmailRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +64,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "max",
     "last_opened_file_path": "C:/Users/sos/myProjets/Switft_Dispatch/swiftDispatch/swift_server_java",
@@ -82,7 +76,7 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Console Colors",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "spring.configuration.checksum": "5e213e8b99f98cd1882ae1fcc0347f6c",
     "vue.rearranger.settings.migration": "true"
   },
@@ -92,6 +86,11 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.swift_server_java.controller" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -133,7 +132,8 @@
       <workItem from="1684825538024" duration="9081000" />
       <workItem from="1685441142486" duration="8342000" />
       <workItem from="1686039868421" duration="6139000" />
-      <workItem from="1686219437916" duration="19572000" />
+      <workItem from="1686219437916" duration="40959000" />
+      <workItem from="1686651286210" duration="18739000" />
     </task>
     <task id="LOCAL-00001" summary="Change django project with a Spring Boat project">
       <created>1680261601048</created>
@@ -233,7 +233,49 @@
       <option name="project" value="LOCAL" />
       <updated>1685529986200</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Add logout to security config">
+      <created>1686645449735</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1686645449735</updated>
+    </task>
+    <task id="LOCAL-00016" summary="change logout url">
+      <created>1686667271000</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1686667271000</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Create base service and refactor email service">
+      <created>1686667365181</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1686667365181</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Change auth controller and create base controller with all  needed response entity">
+      <created>1686667594402</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1686667594402</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Create password util,user service add sigh up and add repository">
+      <created>1686667752136</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1686667752136</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Create logout button for test &#10;fix sign up form and sing in &#10;add endpoint for backend">
+      <created>1686667827383</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1686667827383</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,7 +320,13 @@
     <MESSAGE value="Implement in app authentication and add routes" />
     <MESSAGE value="Delete duplicate class and update security config" />
     <MESSAGE value="Add needed constant for authentication and google logo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add needed constant for authentication and google logo" />
+    <MESSAGE value="Add logout to security config" />
+    <MESSAGE value="change logout url" />
+    <MESSAGE value="Create base service and refactor email service" />
+    <MESSAGE value="Change auth controller and create base controller with all  needed response entity" />
+    <MESSAGE value="Create password util,user service add sigh up and add repository" />
+    <MESSAGE value="Create logout button for test &#10;fix sign up form and sing in &#10;add endpoint for backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create logout button for test &#10;fix sign up form and sing in &#10;add endpoint for backend" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -289,9 +337,44 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/swift_server_java/security/CustomOAuth2UserService.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/swift_server_java/security/CustomOAuth2UserService.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/swift_server_java/security/CustomOAuth2UserService.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/swift_server_java/security/CustomOAuth2UserService.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/AuthController.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="4" />
+          <line>77</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/swift_server_java/service/UserService.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/AuthController.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/AuthController.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

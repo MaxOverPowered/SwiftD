@@ -1,4 +1,5 @@
 import {ACCESS_TOKEN, API_BASE_URL} from '../constants/';
+import {toast} from "react-hot-toast";
 
 
 const request = (options) => {
@@ -32,12 +33,13 @@ export function getUserId(username) {
 
 
 export function getCurrentUser() {
-    if (!localStorage.getItem(ACCESS_TOKEN)) {
+    if (!sessionStorage.getItem(ACCESS_TOKEN)) {
+        console.log("a mers")
         return Promise.reject("No access token set.");
     }
 
     return request({
-        url: API_BASE_URL + "/user/me",
+        url: API_BASE_URL + "/user",
         method: 'GET'
     });
 }
@@ -61,6 +63,7 @@ export function login(loginRequest) {
 
 export function getLogout() {
     document.cookie = ""; // Remove all cookies
+    sessionStorage.clear();
     console.log("Cookies cleared");
     return request({
         url: API_BASE_URL + "/auth/logout",
@@ -76,7 +79,20 @@ export function sendEmail(emailRequest) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(emailRequest),
-        });
+        })
+            .then((response) => {
+                if (response.ok) {
+                    toast.success("Thank you for contacting us. We will get back to you shortly.");
+                } else {
+                    response.text().then((errorMessage) => {
+                        console.log(errorMessage)
+                        toast.error( errorMessage);
+                    });
+                }
+            })
+            .catch((error) => {
+                toast.error(error.message);
+            });
     });
 }
 

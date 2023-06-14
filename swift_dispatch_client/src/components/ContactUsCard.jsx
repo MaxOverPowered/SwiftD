@@ -4,6 +4,7 @@ import "react-phone-input-2/lib/style.css";
 import { sendEmail } from "../utils/ApiUtils";
 import { notification } from "antd";
 import {useTranslation} from "react-i18next";
+
 const ContactCard = (props) => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -49,12 +50,11 @@ const ContactCard = (props) => {
                 clientContactNumber: contact,
                 clientEmail: email,
             };
-            sendEmail(templateParams).then((response) => {
+            sendEmail(templateParams);
                 setName("");
                 setEmail("");
                 setContact("");
                 setMessage("");
-            });
         }
     };
     const isValidEmail = (email) => {
@@ -94,7 +94,7 @@ const ContactCard = (props) => {
             <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-green-900 mb-10">
                 {t('contactUsCard.getInTouch')}
             </h2>
-            <div className="overflow-auto">
+            <div>
                 <form
                     className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-xl mx-auto"
                     onSubmit={handleSubmit}
