@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import logo from "../company_Icon/new/text_element.png";
 import { useTranslation } from "react-i18next";
 import {getLogout} from "../utils/ApiUtils";
+import {toast} from "react-hot-toast";
 
 function Navbar({ handleLanguageSwitch, language }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,6 +41,8 @@ function Navbar({ handleLanguageSwitch, language }) {
   };
   const handleLogout = () => {
    getLogout();
+    toast.success("You're safely logged out!");
+
   };
 
   useEffect(() => {
