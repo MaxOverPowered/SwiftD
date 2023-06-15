@@ -52,13 +52,12 @@ function App() {
                 setIsLoading(false);
             });
     };
-
-    const handleLogout = () => {
-        localStorage.removeItem(ACCESS_TOKEN);
-        setAuthenticated(false);
-        setCurrentUser(null);
-        toast.success("You're safely logged out!");
-    };
+    //
+    // const handleLogout = () => {
+    //     localStorage.removeItem(ACCESS_TOKEN);
+    //     setAuthenticated(false);
+    //     setCurrentUser(null);
+    // };
 
     useEffect(() => {
         const handleOnlineStatus = () => setIsOnline(navigator.onLine);
@@ -88,7 +87,7 @@ function App() {
                         handleLanguageSwitch={handleLanguageSwitch}
                         language={language}
                     />
-                    <div className="pt-20 flex-grow lg:w-12">
+                    <div className="pt-20 flex-grow lg">
                         <ToasterProvider />
                         <Routes className="sm:px-6 md:px-8 lg:px-10 z-10">
                            <Route path="/" element={<Home />} />
