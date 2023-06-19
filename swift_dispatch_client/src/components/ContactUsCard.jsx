@@ -121,7 +121,7 @@ const ContactCard = (props) => {
                     <div className="flex flex-col">
                         <div className="relative">
                             <PhoneInput
-                                className="border-gray-300 w-full px-10"
+                                className="border-gray-300 w-full px-2"
                                 country={"us"}
                                 value={contact}
                                 onChange={handleContactChange}
