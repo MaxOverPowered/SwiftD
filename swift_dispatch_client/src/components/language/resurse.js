@@ -19,7 +19,7 @@ const resources = {
             },
             infoSection: {
                 title: 'Car Hauler Dispatch Service',
-                description: 'Swift Dispatch offers 🚚 Car Hauler Dispatch Services for CDL OTR Drivers in the 🚗 auto transport industry. Are you having a hard time finding the best paying loads? Do you feel like you just don’t have the time or resources to constantly be monitoring load boards? Don’t worry, we have your back! 😎 Our professional team of car hauler dispatchers will keep you loaded. We find the best paying enclosed loads and open carrier loads. 🤝 Our car hauler dispatchers keep you loaded and on the road so that the wheels are rolling and your company is making 💰!',
+                description: '      Swift Dispatch offers 🚚 Car Hauler Dispatch Services for CDL OTR Drivers in the 🚗 auto transport industry. Are you having a hard time finding the best paying loads? Do you feel like you just don’t have the time or resources to constantly be monitoring load boards? Don’t worry, we have your back! 😎 Our professional team of car hauler dispatchers will keep you loaded. We find the best paying enclosed loads and open carrier loads. 🤝 Our car hauler dispatchers keep you loaded and on the road so that the wheels are rolling and your company is making 💰!',
                 buttonText: 'Switch to Russian',
             },
             navbar: {
@@ -31,7 +31,7 @@ const resources = {
                 needDispatch: 'DO YOU NEED DISPATCHING?',
                 rightPlace: 'You have come to the right place!',
                 text1: ' We can help you find amazing loads and good routes, fully\n' +
-                    '            coordinating the carrier’s movement from point A to point B.',
+                    '            coordinating the carrier’s movement \n from point A to point B.',
                 text2: ' Let’s get along and make money together!'
             },
             contactUsCard: {

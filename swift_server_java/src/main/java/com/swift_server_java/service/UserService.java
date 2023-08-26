@@ -37,7 +37,6 @@ public class UserService extends BaseService {
         user.setEmail(signUpRequest.getEmail());
         user.setProvider(provider);
         user.setPassword(PasswordUtil.passwordEncode(signUpRequest.getPassword(), passwordEncoder));
-
         return userRepository.save(user);
     }
 }

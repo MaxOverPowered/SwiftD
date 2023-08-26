@@ -3,7 +3,6 @@ import Loading from "./components/Loading";
 import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import Signup from "./components/Registration/Signup";
-import logo from "../src/company_Icon/new/text_element.png";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
@@ -15,13 +14,10 @@ import CookieConsent from "./components/CookieConsent";
 import { useTranslation } from "react-i18next";
 import Welcome from "./pages/Welcome";
 import OAuth2RedirectHandler from './components/oauth2/OAuth2RedirectHandler';
-import { toast } from "react-hot-toast";
 import { getCurrentUser } from "./utils/ApiUtils";
-import { ACCESS_TOKEN } from "./constants";
 import Login from "./pages/LoginPage";
 import PrivateRoute from "./components/common/PrivateRoute";
 import Profile from "./user/Profile";
-import NotFound from "./components/common/NotFound";
 
 function App() {
     const [authenticated, setAuthenticated] = useState(false);
