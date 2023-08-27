@@ -60,7 +60,7 @@ function Navbar({ handleLanguageSwitch, language }) {
             <div className="absolute inset-y-0 flex items-left lg:hidden">
               {/* Mobile Menu Button */}
               <button
-                type="button"
+                type="buttotern"
                 onClick={toggleNavbar}
                 ref={menuRef}
                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110"
@@ -132,18 +132,18 @@ function Navbar({ handleLanguageSwitch, language }) {
                   {t("navbar.contactUs")}
                 </Link>
                 {/* Language Switch Button */}
-                <button
-                  onClick={handleLanguageSwitchWithCookies}
-                  className="px-3 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg"
-                >
-                  {language === "en" ? "Ru" : "En"}
-                </button>
-                <button
-                    onClick={handleLogout}
-                    className="px-3 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg"
-                >
-                  logout
-                </button>
+                {/*<button*/}
+                {/*  onClick={handleLanguageSwitchWithCookies}*/}
+                {/*  className="px-3 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg"*/}
+                {/*>*/}
+                {/*  {language === "en" ? "Ru" : "En"}*/}
+                {/*</button>*/}
+                {/*<button*/}
+                {/*    onClick={handleLogout}*/}
+                {/*    className="px-3 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg"*/}
+                {/*>*/}
+                {/*  logout*/}
+                {/*</button>*/}
               </div>
             </div>
           </div>

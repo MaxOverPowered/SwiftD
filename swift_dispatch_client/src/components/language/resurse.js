@@ -8,7 +8,7 @@ const resources = {
     en: {
         translation: {
             benefits: {
-                title1: '10% DISPATCH FEE',
+                title1: '8% DISPATCH FEE',
                 description1: 'We offer competitive dispatch fees so you can keep more money in your pocket.',
                 title2: 'FULL SERVICE PACKAGE',
                 description2: 'Our full service package includes dispatching, load planning, and negotiation for the best rates.',
@@ -35,11 +35,11 @@ const resources = {
                 text2: ' Let’s get along and make money together!'
             },
             contactUsCard: {
-                name: 'name',
+                name: 'Name',
                 getInTouch: 'Get in Touch',
-                email: 'email',
+                email: 'Email',
                 contactNumber: 'Contact Number',
-                message: 'message',
+                message: 'Message',
                 submitButton: 'Submit',
                 characterLeft: 'Character left',
                 enterYourMessage: 'Enter your message',

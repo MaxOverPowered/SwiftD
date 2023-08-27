@@ -34,7 +34,7 @@ export function getUserId(username) {
 
 export function getCurrentUser() {
     if (!sessionStorage.getItem(ACCESS_TOKEN)) {
-        console.log("a mers")
+        // console.log("a mers")
         return Promise.reject("No access token set.");
     }
 

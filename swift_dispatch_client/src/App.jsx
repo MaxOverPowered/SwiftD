@@ -77,7 +77,7 @@ function App() {
         <div>
             {isOnline && isLoading === false ? (
                 <div className="flex flex-col min-h-screen">
-                    <CookieConsent setCookie={setCookie} cookies={cookies} />
+                    {/*<CookieConsent setCookie={setCookie} cookies={cookies} />*/}
                     <Navbar
                         className="fixed w-full top-0 z-10"
                         handleLanguageSwitch={handleLanguageSwitch}

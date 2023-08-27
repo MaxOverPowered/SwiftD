@@ -5,24 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="214c3a2f-592c-4a0f-a389-7168f372e53b" name="Changes" comment="Create logout button for test &#10;fix sign up form and sing in &#10;add endpoint for backend">
-      <change afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/components/IGEmbed.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../swift_dispatch_client/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/.idea/swift_dispatch_client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/.idea/swift_dispatch_client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/components/InfoSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/components/InfoSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/components/VideoPlayer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/components/VideoPlayer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/components/language/resurse.js" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/components/language/resurse.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/swift_server_java/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +129,7 @@
       <workItem from="1686651286210" duration="22893000" />
       <workItem from="1686822367582" duration="2372000" />
       <workItem from="1693041990522" duration="487000" />
-      <workItem from="1693042568769" duration="106000" />
+      <workItem from="1693042568769" duration="637000" />
     </task>
     <task id="LOCAL-00001" summary="Change django project with a Spring Boat project">
       <created>1680261601048</created>

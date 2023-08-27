@@ -100,6 +100,13 @@ const ContactCard = (props) => {
                     onSubmit={handleSubmit}
                 >
                     <div className="flex flex-col">
+
+                        <label
+                            htmlFor="name"
+                            className="text-green-900 font-medium mb-2"
+                        >
+                            {t('contactUsCard.name')}
+                        </label>
                         <input
                             type="text"
                             id="name"
@@ -110,18 +117,32 @@ const ContactCard = (props) => {
                         />
                     </div>
                     <div className="flex flex-col">
+
+                        <label
+                            htmlFor="email"
+                            className="text-green-900 font-medium mb-2"
+                        >
+                            {t('contactUsCard.email')}
+                        </label>
                         <input
                             id="email"
                             name="email"
                             onChange={handleEmailChange}
                             className="border-gray-300 bg-gray-200 w-full px-4 py-2 mb-2"
-                            placeholder={t('contactUsCard.enterYourName')}
+                            placeholder={t('contactUsCard.enterYourEmailAddress')}
                         />
                     </div>
                     <div className="flex flex-col">
                         <div className="relative">
+
+                            <label
+                                htmlFor="phone"
+                                className="text-green-900 font-medium mb-3"
+                            >
+                                {t('contactUsCard.contactNumber')}
+                            </label>
                             <PhoneInput
-                                className="border-gray-300 w-full px-2"
+                                className="border-gray-300 w-full"
                                 country={"us"}
                                 value={contact}
                                 onChange={handleContactChange}
