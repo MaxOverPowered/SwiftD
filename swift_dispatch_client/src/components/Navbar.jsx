@@ -111,7 +111,7 @@ function Navbar({ handleLanguageSwitch, language }) {
                   />
                 </a>
               </div>
-              <div className="hidden lg:block items-center justify-between w-full mt-1.5">
+              <div className="hidden lg:block items-center justify-between w-full mt-4 ">
                 {/* Main Menu Links */}
                 <Link
                   to="/about"
