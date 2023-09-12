@@ -1,193 +1,201 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { sendEmail } from "../utils/ApiUtils";
-import { notification } from "antd";
+import {sendEmail} from "../utils/ApiUtils";
+import {notification} from "antd";
 import {useTranslation} from "react-i18next";
 
 const ContactCard = (props) => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [contact, setContact] = useState("");
-    const [message, setMessage] = useState("");
-    const [charCount, setCharCount] = useState(500);
-    const [submitDisable, setSubmitDisable] = useState(true);
-    const {t, i18n} = useTranslation();    const handleSendClick = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-    function handleMessageChange(event) {
-        const newInputText = event.target.value;
-        const remainingChars = 500 - newInputText.length;
-        if (remainingChars >= 0) {
-            setCharCount(remainingChars);
-            setMessage(newInputText);
+        const [name, setName] = useState("");
+        const [email, setEmail] = useState("");
+        const [contact, setContact] = useState("");
+        const [message, setMessage] = useState("");
+        const [charCount, setCharCount] = useState(500);
+        const [submitDisable, setSubmitDisable] = useState(true);
+        const {t, i18n} = useTranslation();
+        const handleSendClick = () => {
+            window.scrollTo({top: 0, behavior: "smooth"});
+        };
+
+        function handleMessageChange(event) {
+            const newInputText = event.target.value;
+            const remainingChars = 500 - newInputText.length;
+            if (remainingChars >= 0) {
+                setCharCount(remainingChars);
+                setMessage(newInputText);
+            }
         }
-    }
-    const handleNameChange = (event) => {
-        setName(event.target.value);
-    };
-    const handleEmailChange = (event) => {
-        setEmail(event.target.value);
-    };
-    const handleContactChange = (value) => {
-        setContact(value);
-    };
-    useEffect(() => {
-        if (name === "" || email === "" || contact === "" || message === "") {
-            setSubmitDisable(true);
-        } else {
-            setSubmitDisable(false);
-        }
-    }, [name, email, contact, message]);
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        if (!isValidEmail(email)) {
-            notification.error({ description: "Invalid Email" });
-        } else {
-            const templateParams = {
-                clientName: name,
-                clientMessage: message,
-                clientContactNumber: contact,
-                clientEmail: email,
-            };
-            sendEmail(templateParams);
+
+        const handleNameChange = (event) => {
+            setName(event);
+        };
+        const handleEmailChange = (event) => {
+            setEmail(event);
+        };
+        const handleContactChange = (value) => {
+            setContact(value);
+        };
+        const handleNotificationFormError = () => {
+            if (!name || !email  || !contact|| !message ) {
+                notification.error({description: "Please complete all sections of the form."});
+            }
+        };
+        const handleSubmit = (event) => {
+            event.preventDefault();
+            if (!name || !email || !contact || !message) {
+                notification.error({description: "Please complete all sections of the form."});
+                return;
+            } else if (!isValidEmail(email)) {
+                notification.error({description: "Invalid Email"});
+            } else {
+                const templateParams = {
+                    clientName: name,
+                    clientMessage: message,
+                    clientContactNumber: contact,
+                    clientEmail: email,
+                };
+                sendEmail(templateParams);
                 setName("");
                 setEmail("");
                 setContact("");
                 setMessage("");
-        }
-    };
-    const isValidEmail = (email) => {
-        const emailRegex =
-            /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return emailRegex.test(String(email).toLowerCase());
-    };
-    const handleClose = () => {
-        props.onClose();
-    };
+                return;
+            }
+        };
 
-    return (
-        <div className="p-8 md:p-10 lg:p-12 bg-white rounded-lg shadow-md">
-            {props.showExitButton && (
-                <div className="absolute top-0 right-0 h-16 w-16">
-                    <button
-                        className="absolute top-0 right-0 p-2 focus:outline-none"
-                        onClick={handleClose}
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-6 w-6 text-gray-500 hover:text-gray-700"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M6 18L18 6M6 6l12 12"
-                            />
-                        </svg>
-                    </button>
-                </div>
-            )}
-            <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-green-900 mb-10">
-                {t('contactUsCard.getInTouch')}
-            </h2>
-            <div>
-                <form
-                    className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-xl mx-auto"
-                    onSubmit={handleSubmit}
-                >
-                    <div className="flex flex-col">
 
-                        <label
-                            htmlFor="name"
-                            className="text-green-900 font-medium mb-2"
-                        >
-                            {t('contactUsCard.name')}
-                        </label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            onChange={handleNameChange}
-                            className="border-gray-300 bg-gray-200 w-full px-4 py-2 mb-2"
-                            placeholder={t('contactUsCard.name')}
-                        />
-                    </div>
-                    <div className="flex flex-col">
+        const isValidEmail = (email) => {
+            const emailRegex =
+                /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return emailRegex.test(String(email).toLowerCase());
+        };
+        const handleClose = () => {
+            props.onClose();
+        };
 
-                        <label
-                            htmlFor="email"
-                            className="text-green-900 font-medium mb-2"
-                        >
-                            {t('contactUsCard.email')}
-                        </label>
-                        <input
-                            id="email"
-                            name="email"
-                            onChange={handleEmailChange}
-                            className="border-gray-300 bg-gray-200 w-full px-4 py-2 mb-2"
-                            placeholder={t('contactUsCard.enterYourEmailAddress')}
-                        />
-                    </div>
-                    <div className="flex flex-col">
-                        <div className="relative">
-
-                            <label
-                                htmlFor="phone"
-                                className="text-green-900 font-medium mb-3"
-                            >
-                                {t('contactUsCard.contactNumber')}
-                            </label>
-                            <PhoneInput
-                                className="border-gray-300 w-full"
-                                country={"us"}
-                                value={contact}
-                                onChange={handleContactChange}
-                                inputProps={{
-                                    name: "contact",
-                                    required: true,
-                                    placeholder: t('contactUsCard.enterYourContact'),
-                                    className: "border-gray-300 bg-gray-100 w-full px-11 py-2",
-                                }}
-
-                            />
-                        </div>
-                    </div>
-                    <div className="flex flex-col">
-                        <label
-                            htmlFor="message"
-                            className="text-green-900 font-medium mb-2"
-                        >
-                            {t('contactUsCard.message')}
-                        </label>
-                        <textarea
-                            className="border-gray-300 bg-gray-200 w-full px-4 py-2 rounded-md h-32 resize-none"
-                            maxLength={500}
-                            rows={5}
-                            value={message}
-                            onChange={handleMessageChange}
-                            placeholder={t('contactUsCard.enterMessageInfo')}
-                        />
-                        <p className="text-right text-sm text-gray-500">
-                            {message.length}/500 characters
-                        </p>
-                    </div>
-                    <div className="flex flex-col md:col-span-2">
+        return (
+            <div className="p-8 md:p-10 lg:p-12 bg-white rounded-lg shadow-md">
+                {props.showExitButton && (
+                    <div className="absolute top-0 right-0 h-16 w-16">
                         <button
-                            onClick={handleSendClick}
-                            disabled={submitDisable}
-                            type="submit"
-                            className="text-white bg-green-500 hover:bg-green-600 px-4 py-2 rounded-md"
+                            className="absolute top-0 right-0 p-2 focus:outline-none"
+                            onClick={handleClose}
                         >
-                            {t('contactUsCard.submitButton')}
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-6 w-6 text-gray-500 hover:text-gray-700"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                            </svg>
                         </button>
                     </div>
-                </form>
+                )}
+                <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-green-900 mb-10">
+                    {t('contactUsCard.getInTouch')}
+                </h2>
+                <div>
+                    <form
+                        className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-xl mx-auto"
+                        onSubmit={handleSubmit}
+                    >
+                        <div className="flex flex-col">
+
+                            <label
+                                htmlFor="name"
+                                className="text-green-900 font-medium mb-2"
+                            >
+                                {t('contactUsCard.name')}
+                            </label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                onChange={handleNameChange}
+                                className="border-gray-300 bg-gray-200 w-full px-4 py-2 mb-2"
+                                placeholder={t('contactUsCard.name')}
+                            />
+                        </div>
+                        <div className="flex flex-col">
+
+                            <label
+                                htmlFor="email"
+                                className="text-green-900 font-medium mb-2"
+                            >
+                                {t('contactUsCard.email')}
+                            </label>
+                            <input
+                                id="email"
+                                name="email"
+                                onChange={handleEmailChange}
+                                className="border-gray-300 bg-gray-200 w-full px-4 py-2 mb-2"
+                                placeholder={t('contactUsCard.enterYourEmailAddress')}
+                            />
+                        </div>
+                        <div className="flex flex-col">
+                            <div className="relative">
+
+                                <label
+                                    htmlFor="phone"
+                                    className="text-green-900 font-medium mb-3"
+                                >
+                                    {t('contactUsCard.contactNumber')}
+                                </label>
+                                <PhoneInput
+                                    className="border-gray-300 w-full"
+                                    country={"us"}
+                                    value={contact}
+                                    onChange={handleContactChange}
+                                    inputProps={{
+                                        name: "contact",
+                                        required: true,
+                                        placeholder: t('contactUsCard.enterYourContact'),
+                                        className: "border-gray-300 bg-gray-100 w-full px-11 py-2",
+                                    }}
+
+                                />
+                            </div>
+                        </div>
+                        <div className="flex flex-col">
+                            <label
+                                htmlFor="message"
+                                className="text-green-900 font-medium mb-2"
+                            >
+                                {t('contactUsCard.message')}
+                            </label>
+                            <textarea
+                                className="border-gray-300 bg-gray-200 w-full px-4 py-2 rounded-md h-32 resize-none"
+                                maxLength={500}
+                                rows={5}
+                                value={message}
+                                onChange={handleMessageChange}
+                                placeholder={t('contactUsCard.enterMessageInfo')}
+                            />
+                            <p className="text-right text-sm text-gray-500">
+                                {message.length}/500 characters
+                            </p>
+                        </div>
+                        <div className="flex flex-col md:col-span-2">
+                            <button
+                                onClick={handleSendClick}
+                                disabled={handleNotificationFormError}
+                                type="submit"
+                                className="text-white bg-green-500 hover:bg-green-600 px-4 py-2 rounded-md"
+                            >
+                                {t('contactUsCard.submitButton')}
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
-    );
-};
+        );
+    }
+;
 export default ContactCard;
