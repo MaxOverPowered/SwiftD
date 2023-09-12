@@ -11,7 +11,7 @@ const services = [
     price: "from 100 $",
     features: [
       "First load on us 😊",
-      "2+ years dispatch🎧",
+      "3+ years dispatch🎧",
       "Best possible rates on the route 💰",
       "Good Communication 📞",
       "Keep company healthy🌟",
@@ -36,9 +36,9 @@ const services = [
   },
   {
     title: "Logbook",
-    price: `from 199 $`,
+    price: `from 99 $`,
     features: [
-      "Route optimization",
+      "Route optimization 📍",
       "We've successfully managed to ensure compliance with HOS regulations for years, even before drivers used electronic logs. Trust our expert team to ensure your drivers always follow the latest HOS rules.",
     ],
     backgroundImage: logImage,
