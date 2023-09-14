@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="214c3a2f-592c-4a0f-a389-7168f372e53b" name="Changes" comment="Create logout button for test &#10;fix sign up form and sing in &#10;add endpoint for backend">
-      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/App.jsx" afterDir="false" />
+    <list default="true" id="214c3a2f-592c-4a0f-a389-7168f372e53b" name="Changes" comment="Change application properties">
+      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/components/InfoSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/components/InfoSection.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/components/language/resurse.js" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/components/language/resurse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/pages/AboutUs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/pages/AboutUs.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/pages/Services.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/pages/Services.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/swift_server_java/service/EmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,40 +52,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "max",
-    "last_opened_file_path": "C:/Users/sos/myProjets/Switft_Dispatch/swiftDispatch/swift_server_java",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MTConfigurable",
-    "spring.configuration.checksum": "5e213e8b99f98cd1882ae1fcc0347f6c",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;max&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sos/myProjets/Switft_Dispatch/swiftDispatch/swift_server_java&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MTConfigurable&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;5e213e8b99f98cd1882ae1fcc0347f6c&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.swift_server_java.controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/template" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -129,7 +136,8 @@
       <workItem from="1686651286210" duration="22893000" />
       <workItem from="1686822367582" duration="2372000" />
       <workItem from="1693041990522" duration="487000" />
-      <workItem from="1693042568769" duration="637000" />
+      <workItem from="1693042568769" duration="7091000" />
+      <workItem from="1694101023481" duration="4369000" />
     </task>
     <task id="LOCAL-00001" summary="Change django project with a Spring Boat project">
       <created>1680261601048</created>
@@ -271,7 +279,35 @@
       <option name="project" value="LOCAL" />
       <updated>1686667827383</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Create template for email(company,client)">
+      <created>1694551607493</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1694551607493</updated>
+    </task>
+    <task id="LOCAL-00022" summary="update gitignore for local">
+      <created>1694551626431</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1694551626431</updated>
+    </task>
+    <task id="LOCAL-00023" summary="add some details to our company service">
+      <created>1694551688360</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1694551688360</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Change application properties">
+      <created>1694551735705</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1694551735705</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +361,11 @@
     <MESSAGE value="Change auth controller and create base controller with all  needed response entity" />
     <MESSAGE value="Create password util,user service add sigh up and add repository" />
     <MESSAGE value="Create logout button for test &#10;fix sign up form and sing in &#10;add endpoint for backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create logout button for test &#10;fix sign up form and sing in &#10;add endpoint for backend" />
+    <MESSAGE value="Create template for email(company,client)" />
+    <MESSAGE value="update gitignore for local" />
+    <MESSAGE value="add some details to our company service" />
+    <MESSAGE value="Change application properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change application properties" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

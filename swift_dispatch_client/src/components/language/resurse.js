@@ -8,18 +8,24 @@ const resources = {
     en: {
         translation: {
             benefits: {
-                title1: '8% DISPATCH FEE',
-                description1: 'We offer competitive dispatch fees so you can keep more money in your pocket.',
-                title2: 'FULL SERVICE PACKAGE',
-                description2: 'Our full service package includes dispatching, load planning, and negotiation for the best rates.',
-                title3: 'DEDICATED DISPATCHER',
-                description3: 'Our professional team of car hauler dispatchers will keep you loaded and on the road.',
-                title4: 'OPTIMIZED ROUTES AND LANES',
-                description4: 'We find the best paying enclosed loads and open carrier loads to keep your company making money.',
+                title1: 'COMPETITIVE PRICING',
+                description1: 'Our price points are selected based on the quality of our services, taking into account the prices in this niche.',
+                title2: 'PROFESSIONAL TEAM',
+                description2: 'We gathered a team of dedicated dispatchers, with a good experience in this industry.',
+                title3: 'CUSTOMER SUPPORT',
+                description3: 'We’re always ready to provide help and make sure customers are successful in solving whatever issues they encounter. \n',
+                title4: 'FULL SERVICE PACK',
+                description4: 'We offer a package, with all the needed services: dispatch, route planning, setups, accounting and logbook.',
             },
             infoSection: {
-                title: 'Car Hauler Dispatch Service',
-                description: '      Swift Dispatch offers 🚚 Car Hauler Dispatch Services for CDL OTR Drivers in the 🚗 auto transport industry. Are you having a hard time finding the best paying loads? Do you feel like you just don’t have the time or resources to constantly be monitoring load boards? Don’t worry, we have your back! 😎 Our professional team of car hauler dispatchers will keep you loaded. We find the best paying enclosed loads and open carrier loads. 🤝 Our car hauler dispatchers keep you loaded and on the road so that the wheels are rolling and your company is making 💰!',
+                title: 'Car Hauler Dispatch Service\n',
+                description: `Are you having a hard time finding the best paying loads?
+                 Do you feel like you just don’t have the time or resources to constantly be monitoring load boards?
+                            Don’t worry, we have your back!
+                            Our professional team of dispatchers will keep you loaded. 
+                            We work hard to keep you on the road, the wheels rolling and your company making good money!
+                            Count on us for professionalism in the auto transport industry!`,
+
                 buttonText: 'Switch to Russian',
             },
             navbar: {
@@ -29,10 +35,10 @@ const resources = {
             },
             applyNowSection: {
                 needDispatch: 'DO YOU NEED DISPATCHING?',
-                rightPlace: 'You have come to the right place!',
+                rightPlace: 'Check our offers, down below!\n',
                 text1: ' We can help you find amazing loads and good routes, fully\n' +
-                    '            coordinating the carrier’s movement \n from point A to point B.',
-                text2: ' Let’s get along and make money together!'
+                    '            coordinating the movement \n from point A to point B.',
+                text2: ' Let’s make money together!'
             },
             contactUsCard: {
                 name: 'Name',
@@ -45,9 +51,18 @@ const resources = {
                 enterYourMessage: 'Enter your message',
                 enterYourEmailAddress: 'Enter your email address',
                 enterYourName: 'Enter your name',
-                enterYourContact:'Enter your phone number',
-                enterMessageInfo:"Please leave some details about your company here, for example, how many drivers you have, whether you're interested in collaborating with us, or if you`d like to learn about our benefits."
+                enterYourContact: 'Enter your phone number',
+                enterMessageInfo: "Please leave some details about your company here, for example, how many drivers you have," +
+                    " whether you're interested in collaborating with us, or if you`d like to learn about our benefits."
 
+            },
+            aboutUs: {
+                description: 'SWIFT Dispatch is more than just a logistics company.' +
+                    'It is a team of passionate car-hauling experts who love being part of a carrier’s road to success.' +
+                    'With over 3 years of experience in the industry,' +
+                    'we know the United States of America like the back of our hand,' +
+                    'and we pride ourselves on our ability to efficiently and ' +
+                    'effectively dispatch our drivers to their destinations.'
             }
         },
     },
@@ -81,7 +96,7 @@ const resources = {
                 text2: ' Давайте работать вместе и зарабатывать деньги!',
                 contactUs: 'Связаться с нами'
             },
-            contactUsCard : {
+            contactUsCard: {
                 name: 'Имя',
                 getInTouch: 'Свяжитесь с нами',
                 email: 'Электронная почта',
@@ -92,7 +107,7 @@ const resources = {
                 enterYourMessage: 'Введите ваше сообщение',
                 enterYourEmailAddress: 'Введите ваш адрес электронной почты',
                 enterYourName: 'Введите ваше имя',
-                enterYourContact:'Введите свой номер телефона',
+                enterYourContact: 'Введите свой номер телефона',
                 enterMessageInfo: "Пожалуйста, оставьте здесь некоторые сведения о вашей компании, например, сколько у вас водителей, заинтересованы ли вы в сотрудничестве с нами или хотели бы узнать о наших преимуществах."
 
 

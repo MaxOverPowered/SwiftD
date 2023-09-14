@@ -11,7 +11,7 @@ const Benefits = () => {
     const benefits = [
         {
             title: t("benefits.title1"),
-            description: t("benefits.description1"),
+        description: t("benefits.description1"),
         },
         {
             title: t("benefits.title2"),
@@ -37,11 +37,11 @@ const Benefits = () => {
             <div className="lg:w-2/3 lg:pl-16 flex flex-col text-center items-center">
                 <div>
                     <h2 className="text-3xl font-bold text-gray-900 mb-2">
-                        {t("infoSection.title")}
+                        {t("infoSection.title")}<br/><br/>
                     </h2>
-                    <p className="text-gray-700 leading-relaxed mb-6">
+                    <div className="text-gray-700 leading-relaxed mb-6"  style={{ whiteSpace: 'pre-line' }}>
                         {t("infoSection.description")}
-                    </p>
+                    </div>
                 </div>
                 <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6">
                     {benefits.map((benefit) => (
