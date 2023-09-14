@@ -82,7 +82,7 @@ export function sendEmail(emailRequest) {
         })
             .then((response) => {
                 if (response.ok) {
-                    toast.success("Thank you for contacting us. We will get back to you shortly.");
+                    toast.success("Thank you for contacting us. We will get back to you shortly.",setTimeout(5000));
                 } else {
                     response.text().then((errorMessage) => {
                         console.log(errorMessage)

@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React, { useState} from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import {sendEmail} from "../utils/ApiUtils";
-import {notification} from "antd";
+import {toast} from "react-hot-toast";
 import {useTranslation} from "react-i18next";
 
 const ContactCard = (props) => {
@@ -11,7 +11,6 @@ const ContactCard = (props) => {
         const [contact, setContact] = useState("");
         const [message, setMessage] = useState("");
         const [charCount, setCharCount] = useState(500);
-        const [submitDisable, setSubmitDisable] = useState(true);
         const {t, i18n} = useTranslation();
         const handleSendClick = () => {
             window.scrollTo({top: 0, behavior: "smooth"});
@@ -27,26 +26,26 @@ const ContactCard = (props) => {
         }
 
         const handleNameChange = (event) => {
-            setName(event);
+            setName(event.target.value);
         };
         const handleEmailChange = (event) => {
-            setEmail(event);
+            setEmail(event.target.value);
         };
         const handleContactChange = (value) => {
             setContact(value);
         };
         const handleNotificationFormError = () => {
             if (!name || !email  || !contact|| !message ) {
-                notification.error({description: "Please complete all sections of the form."});
+                toast.error("Please complete all sections of the form.");
             }
         };
         const handleSubmit = (event) => {
             event.preventDefault();
             if (!name || !email || !contact || !message) {
-                notification.error({description: "Please complete all sections of the form."});
+                toast.error("Please complete all sections of the form.");
                 return;
             } else if (!isValidEmail(email)) {
-                notification.error({description: "Invalid Email"});
+                toast.error( "Invalid Email");
             } else {
                 const templateParams = {
                     clientName: name,
@@ -55,21 +54,21 @@ const ContactCard = (props) => {
                     clientEmail: email,
                 };
                 sendEmail(templateParams);
-                setName("");
-                setEmail("");
-                setContact("");
                 setMessage("");
                 return;
             }
         };
 
 
-        const isValidEmail = (email) => {
-            const emailRegex =
-                /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            return emailRegex.test(String(email).toLowerCase());
-        };
-        const handleClose = () => {
+    const isValidEmail = (email) => {
+        console.log("Testing email:", email);
+
+        const emailRegex =
+            /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return emailRegex.test(String(email).toLowerCase());
+    };
+
+    const handleClose = () => {
             props.onClose();
         };
 
