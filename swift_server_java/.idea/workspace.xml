@@ -5,13 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="214c3a2f-592c-4a0f-a389-7168f372e53b" name="Changes" comment="Change application properties">
-      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/components/InfoSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/components/InfoSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/components/language/resurse.js" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/components/language/resurse.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/pages/AboutUs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/pages/AboutUs.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../swift_dispatch_client/src/pages/Services.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../swift_dispatch_client/src/pages/Services.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/SwiftServerJavaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/swift_server_java/SwiftServerJavaApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/config/AppProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/BaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/payload/ApiResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/payload/AuthResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/payload/LoginRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/payload/SignUpRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/security/TokenProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/security/oauth2/HttpCookieOAuth2AuthorizationRequestRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/security/oauth2/OAuth2AuthenticationFailureHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/security/oauth2/OAuth2AuthenticationSuccessHandler.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/swift_server_java/service/EmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/swift_server_java/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/swift_server_java/util/PasswordUtil.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -396,24 +411,9 @@
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/AuthController.java</url>
-          <line>77</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/swift_server_java/service/UserService.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/AuthController.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/swift_server_java/controller/AuthController.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="21" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/swift_server_java/service/EmailService.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

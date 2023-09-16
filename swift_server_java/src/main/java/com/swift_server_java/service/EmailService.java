@@ -3,36 +3,24 @@ package com.swift_server_java.service;
 import com.swift_server_java.model.EmailDetails;
 import com.swift_server_java.repository.EmailRepository;
 import com.swift_server_java.repository.UserRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@Transactional
 public class EmailService extends BaseService {
-
-    private final Logger logger = LoggerFactory.getLogger(EmailService.class);
-
 
     private final JavaMailSender emailSender;
 
-    @Value("${spring.mail.username}")
-    private String companyEmail;
-
-    public EmailService(UserRepository userRepository,
-                        EmailRepository emailRepository, JavaMailSender emailSender) {
+    public EmailService(UserRepository userRepository, EmailRepository emailRepository, JavaMailSender emailSender) {
         super(userRepository, emailRepository);
+
         this.emailSender = emailSender;
     }
 
 
     public boolean hasSentTooManyEmails(String email) {
-        int emailCount = emailRepository.countByEmail(email);
-        return emailCount >= 3;
+        return emailRepository.countByEmail(email) >= 3;
     }
 
     public void addEmailInDatabase(EmailDetails emailDetails) {
@@ -41,7 +29,8 @@ public class EmailService extends BaseService {
 
     public final void sendEmail(EmailDetails emailDetails) {
         try {
-            logger.info("sendEmail with param = {}", emailDetails);
+
+            String companyEmail = "swift.dispatch.info@gmail.com";
 
             String emailBodyReply = "Hello 👋, " + emailDetails.getClientName() + "\n\nThank you for contacting us📨!\n\nWe " +
                     "have received your message and we appreciate you taking the time to write to us. Our team will review " +
@@ -68,9 +57,8 @@ public class EmailService extends BaseService {
             autoReply.setSubject("Thank you for contacting us! The Swift Dispatch 🚚 Team!");
             autoReply.setText(emailBodyReply);
 
-            emailSender.send(autoReply);
-        }catch (Exception e){
-            logger.error("-----------------------sendEmail",e);
+        } catch (Exception e) {
+            System.out.println(e + "------send email error ");
         }
     }
 }
